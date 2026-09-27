@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Login - ChequeBook</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Admin Login Box -->
+        <div class="form-box">
+
+            <h1>ChequeBook</h1>
+
+            <p class="subtitle">
+                Online Cheque Book Request System
+            </p>
+
+            <h2>Admin Login</h2>
+
+
+            <!-- Admin Login Form -->
+            <form id="adminLoginForm">
+
+                <!-- Email -->
+                <label for="adminEmail">
+                    Admin Email
+                </label>
+
+                <input
+                    type="email"
+                    id="adminEmail"
+                    placeholder="Enter admin email"
+                    required
+                >
+
+
+                <!-- Password -->
+                <label for="adminPassword">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="adminPassword"
+                    placeholder="Enter admin password"
+                    required
+                >
+
+
+                <!-- Login Button -->
+                <button type="submit">
+                    Admin Login
+                </button>
+
+            </form>
+
+
+            <!-- Login Message -->
+            <p id="adminLoginMessage"></p>
+
+
+            <!-- Back to Customer Login -->
+            <p class="switch-text">
+
+                Customer Login?
+
+                <a href="index.html">
+                    Go to Customer Login
+                </a>
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <script src="admin-login.js"></script>
+
+</body>
+
+</html>

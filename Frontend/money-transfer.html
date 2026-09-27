@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Money Transfer - ChequeBook</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <header class="dashboard-header">
+
+            <div>
+                <h1>🏦 ChequeBook</h1>
+
+                <p>
+                    Money Transfer
+                </p>
+            </div>
+
+            <button id="backBtn">
+                Back to Dashboard
+            </button>
+
+        </header>
+
+
+        <section class="dashboard-card">
+
+            <h2>Transfer Money</h2>
+
+            <div class="info-grid">
+
+                <div>
+                    <span>Account Number</span>
+                    <strong id="accountNumber">-</strong>
+                </div>
+
+                <div>
+                    <span>Account Type</span>
+                    <strong id="accountType">-</strong>
+                </div>
+
+                <div>
+                    <span>Available Balance</span>
+                    <strong id="accountBalance">-</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="dashboard-card">
+
+            <h2>Transfer Details</h2>
+
+            <form id="transferForm">
+
+                <label>
+                    Beneficiary Account Number
+                </label>
+
+                <input
+                    type="text"
+                    id="beneficiaryAccount"
+                    placeholder="Enter beneficiary account number"
+                    required
+                >
+
+
+                <label>
+                    Transfer Amount
+                </label>
+
+                <input
+                    type="number"
+                    id="transferAmount"
+                    placeholder="Enter amount"
+                    min="1"
+                    required
+                >
+
+
+                <button
+                    type="submit"
+                    class="request-btn">
+
+                    Transfer Money
+
+                </button>
+
+            </form>
+
+            <p id="transferMessage"></p>
+
+        </section>
+
+
+        <footer class="dashboard-footer">
+
+            <p>
+                © 2026 ChequeBook. All Rights Reserved.
+            </p>
+
+        </footer>
+
+    </div>
+
+
+    <script src="money-transfer.js"></script>
+
+</body>
+
+</html>

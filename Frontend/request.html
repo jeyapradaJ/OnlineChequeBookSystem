@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Request Cheque Book - ChequeBook</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- Header -->
+        <header class="dashboard-header">
+
+            <div>
+                <h1>ChequeBook</h1>
+                <p>Cheque Book Request</p>
+            </div>
+
+            <button id="backBtn">Back to Dashboard</button>
+
+        </header>
+
+
+        <!-- Request Form -->
+        <section class="dashboard-card request-page-card">
+
+            <h2>Request a New Cheque Book</h2>
+
+            <p class="request-description">
+                Select your bank account and choose the number of cheque leaves.
+            </p>
+
+
+            <form id="requestForm">
+
+                <!-- Account -->
+                <label for="accountSelect">
+                    Select Account
+                </label>
+
+                <select id="accountSelect" required>
+                    <option value="">Loading account...</option>
+                </select>
+
+
+                <!-- Number of Leaves -->
+                <label for="leavesSelect">
+                    Number of Leaves
+                </label>
+
+                <select id="leavesSelect" required>
+
+                    <option value="">
+                        Select number of leaves
+                    </option>
+
+                    <option value="25">
+                        25 Leaves
+                    </option>
+
+                    <option value="50">
+                        50 Leaves
+                    </option>
+
+                    <option value="100">
+                        100 Leaves
+                    </option>
+
+                </select>
+
+
+                <!-- Submit -->
+                <button type="submit">
+                    Submit Cheque Book Request
+                </button>
+
+            </form>
+
+
+            <p id="requestMessage"></p>
+
+        </section>
+
+    </div>
+
+
+    <script src="request.js"></script>
+
+</body>
+
+</html>

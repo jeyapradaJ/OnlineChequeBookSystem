@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Transactions - ChequeBook</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- HEADER -->
+
+        <header class="dashboard-header">
+
+            <div>
+                <h1>🏦 ChequeBook</h1>
+
+                <p>
+                    Transaction History
+                </p>
+            </div>
+
+            <button id="backBtn">
+                Back to Dashboard
+            </button>
+
+        </header>
+
+
+        <!-- ACCOUNT SUMMARY -->
+
+        <section class="dashboard-card">
+
+            <h2>Account Summary</h2>
+
+            <div class="info-grid">
+
+                <div>
+                    <span>Account Number</span>
+                    <strong id="accountNumber">-</strong>
+                </div>
+
+                <div>
+                    <span>Account Type</span>
+                    <strong id="accountType">-</strong>
+                </div>
+
+                <div>
+                    <span>Current Balance</span>
+                    <strong id="accountBalance">-</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TRANSACTION HISTORY -->
+
+        <section class="dashboard-card">
+
+            <h2>Transaction History</h2>
+
+            <div class="admin-table-wrapper">
+
+                <table class="admin-table">
+
+                    <thead>
+
+                        <tr>
+                            <th>Transaction ID</th>
+                            <th>Type</th>
+                            <th>Amount</th>
+                            <th>Balance</th>
+                            <th>Status</th>
+                            <th>Date</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="transactionBody">
+
+                        <tr>
+
+                            <td colspan="6">
+                                Loading transactions...
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <footer class="dashboard-footer">
+
+            <p>
+                © 2026 ChequeBook. All Rights Reserved.
+            </p>
+
+        </footer>
+
+    </div>
+
+
+    <script src="transactions.js"></script>
+
+</body>
+
+</html>

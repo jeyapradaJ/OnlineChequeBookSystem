@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Cheque Book System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Login Section -->
+        <div class="form-box" id="loginBox">
+
+            <h1>ChequeBook</h1>
+            <p class="subtitle">Online Cheque Book Request System</p>
+
+            <h2>Customer Login</h2>
+
+            <form id="loginForm">
+
+                <label>Email</label>
+                <input
+                    type="email"
+                    id="loginEmail"
+                    placeholder="Enter your email"
+                    required
+                >
+
+                <label>Password</label>
+                <input
+                    type="password"
+                    id="loginPassword"
+                    placeholder="Enter your password"
+                    required
+                >
+
+                <button type="submit">Login</button>
+
+            </form>
+
+            <p id="loginMessage"></p>
+
+            <p class="switch-text">
+                Don't have an account?
+                <a href="#" id="showRegister">Create Account</a>
+            </p>
+
+        </div>
+
+
+        <!-- Registration Section -->
+        <div class="form-box hidden" id="registerBox">
+
+            <h1>ChequeBook</h1>
+            <p class="subtitle">Create your customer account</p>
+
+            <h2>Customer Registration</h2>
+
+            <form id="registerForm">
+
+                <label>Full Name</label>
+                <input
+                    type="text"
+                    id="registerName"
+                    placeholder="Enter your full name"
+                    required
+                >
+
+                <label>Email</label>
+                <input
+                    type="email"
+                    id="registerEmail"
+                    placeholder="Enter your email"
+                    required
+                >
+
+                <label>Phone Number</label>
+                <input
+                    type="tel"
+                    id="registerPhone"
+                    placeholder="Enter your phone number"
+                    required
+                >
+
+                <label>Password</label>
+                <input
+                    type="password"
+                    id="registerPassword"
+                    placeholder="Create a password"
+                    required
+                >
+
+                <button type="submit">Create Account</button>
+
+            </form>
+
+            <p id="registerMessage"></p>
+
+            <p class="switch-text">
+                Already have an account?
+                <a href="#" id="showLogin">Login</a>
+            </p>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

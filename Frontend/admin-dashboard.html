@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard - ChequeBook</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- =========================
+             Admin Header
+        ========================== -->
+
+        <header class="dashboard-header">
+
+            <div>
+                <h1>ChequeBook</h1>
+                <p>Admin Management Dashboard</p>
+            </div>
+
+            <button id="adminLogoutBtn">
+                Logout
+            </button>
+
+        </header>
+
+
+        <!-- =========================
+             Welcome Section
+        ========================== -->
+
+        <section class="welcome-section">
+
+            <h2>
+                Welcome, <span id="adminName">Admin</span> 👋
+            </h2>
+
+            <p>
+                Manage customers and cheque book requests.
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             Dashboard Statistics
+        ========================== -->
+
+        <section class="dashboard-card">
+
+            <h2>Dashboard Overview</h2>
+
+            <div class="info-grid">
+
+                <div>
+                    <span>Total Customers</span>
+
+                    <strong id="totalCustomers">
+                        0
+                    </strong>
+                </div>
+
+
+                <div>
+                    <span>Total Requests</span>
+
+                    <strong id="totalRequests">
+                        0
+                    </strong>
+                </div>
+
+
+                <div>
+                    <span>Pending Requests</span>
+
+                    <strong id="pendingRequests">
+                        0
+                    </strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             Customer List
+        ========================== -->
+
+        <section class="dashboard-card">
+
+            <h2>Registered Customers</h2>
+
+            <div id="customerContainer">
+
+                <p>
+                    Loading customers...
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             Cheque Book Requests
+        ========================== -->
+
+        <section class="dashboard-card">
+
+            <h2>Cheque Book Requests</h2>
+
+            <div id="requestContainer">
+
+                <p>
+                    Loading cheque book requests...
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </div>
+
+
+    <!-- Admin Dashboard JavaScript -->
+    <script src="admin-dashboard.js"></script>
+
+</body>
+
+</html>

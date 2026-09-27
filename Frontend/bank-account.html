@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bank Account Details - ChequeBook</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- Header -->
+        <header class="dashboard-header">
+
+            <div>
+                <h1>ChequeBook</h1>
+                <p>Bank Account Details</p>
+            </div>
+
+            <button id="logoutBtn">Logout</button>
+
+        </header>
+
+
+        <!-- Bank Account Form -->
+        <section class="dashboard-card request-page-card">
+
+            <h2>Add Bank Account</h2>
+
+            <p class="request-description">
+                Enter your bank account details to continue.
+            </p>
+
+
+            <form id="bankAccountForm">
+
+                <!-- Account Number -->
+                <label for="accountNumber">
+                    Account Number
+                </label>
+
+                <input
+                    type="text"
+                    id="accountNumber"
+                    placeholder="Enter your account number"
+                    required
+                >
+
+
+                <!-- Account Type -->
+                <label for="accountType">
+                    Account Type
+                </label>
+
+                <select id="accountType" required>
+
+                    <option value="">
+                        Select account type
+                    </option>
+
+                    <option value="SAVINGS">
+                        Savings Account
+                    </option>
+
+                    <option value="CURRENT">
+                        Current Account
+                    </option>
+
+                </select>
+
+
+                <!-- Balance -->
+                <label for="balance">
+                    Account Balance
+                </label>
+
+                <input
+                    type="number"
+                    id="balance"
+                    placeholder="Enter account balance"
+                    min="0"
+                    required
+                >
+
+
+                <!-- Submit -->
+                <button type="submit">
+                    Save Bank Account
+                </button>
+
+            </form>
+
+
+            <p id="accountMessage"></p>
+
+        </section>
+
+    </div>
+
+
+    <script src="bank-account.js"></script>
+
+</body>
+
+</html>

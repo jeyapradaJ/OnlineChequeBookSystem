@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Customer Dashboard - ChequeBook</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- Header -->
+        <header class="dashboard-header">
+
+            <div>
+                <h1>ChequeBook</h1>
+                <p>Online Cheque Book Request System</p>
+            </div>
+
+            <button id="logoutBtn">Logout</button>
+
+        </header>
+
+
+        <!-- Welcome -->
+        <section class="welcome-section">
+
+            <h2>Welcome, <span id="customerName">Customer</span> 👋</h2>
+
+            <p>
+                Manage your bank account and track your cheque book requests.
+            </p>
+
+        </section>
+
+
+        <!-- Customer Information -->
+        <section class="dashboard-card">
+
+            <h2>Customer Information</h2>
+
+            <div class="info-grid">
+
+                <div>
+                    <span>Name</span>
+                    <strong id="customerFullName">-</strong>
+                </div>
+
+                <div>
+                    <span>Email</span>
+                    <strong id="customerEmail">-</strong>
+                </div>
+
+                <div>
+                    <span>Phone</span>
+                    <strong id="customerPhone">-</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Account Information -->
+        <section class="dashboard-card">
+
+            <h2>Bank Account</h2>
+
+            <div id="accountContainer">
+
+                <div class="info-grid">
+
+                    <div>
+                        <span>Account Number</span>
+                        <strong id="accountNumber">-</strong>
+                    </div>
+
+                    <div>
+                        <span>Account Type</span>
+                        <strong id="accountType">-</strong>
+                    </div>
+
+                    <div>
+                        <span>Balance</span>
+                        <strong id="accountBalance">-</strong>
+                    </div>
+
+                </div>
+
+            </div>
+<button
+    class="request-btn"
+    id="transactionsBtn">
+    View Transactions
+</button>
+<button
+    class="request-btn"
+    id="moneyTransferBtn">
+    Money Transfer
+</button>
+        </section>
+
+
+        <!-- Cheque Book Request -->
+ <section class="dashboard-card">
+    <h2>Cheque Book Request History</h2>
+
+    <div class="admin-table-wrapper">
+
+        <table class="admin-table">
+
+            <thead>
+                <tr>
+                    <th>Request ID</th>
+                    <th>Account Number</th>
+                    <th>Leaves</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody id="requestHistoryBody">
+                <tr>
+                    <td colspan="4">
+                        Loading requests...
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <button class="request-btn" id="requestChequeBtn">
+        Request New Cheque Book
+    </button>
+</section>
+
+    </div>
+
+
+    <script src="dashboard.js"></script>
+
+</body>
+
+</html>
