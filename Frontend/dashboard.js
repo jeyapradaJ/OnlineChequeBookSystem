@@ -3,7 +3,7 @@ const API_URL = "http://localhost:8081/api";
 const customerId = localStorage.getItem("customerId");
 
 if (!customerId) {
-    window.location.href = "index.html";
+   window.location.href = "customer-login.html";
 }
 
 

@@ -1,115 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Cheque Book System</title>
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>ChequeBook - Online Cheque Book Request System</title>
 
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-    <div class="container">
+    <!-- HERO SECTION -->
 
-        <!-- Login Section -->
-        <div class="form-box" id="loginBox">
+    <section class="home-hero">
 
-            <h1>ChequeBook</h1>
-            <p class="subtitle">Online Cheque Book Request System</p>
+        <div class="home-content">
 
-            <h2>Customer Login</h2>
+            <h1>
+                Online Cheque Book
+                <br>
+                Request System
+            </h1>
 
-            <form id="loginForm">
-
-                <label>Email</label>
-                <input
-                    type="email"
-                    id="loginEmail"
-                    placeholder="Enter your email"
-                    required
-                >
-
-                <label>Password</label>
-                <input
-                    type="password"
-                    id="loginPassword"
-                    placeholder="Enter your password"
-                    required
-                >
-
-                <button type="submit">Login</button>
-
-            </form>
-
-            <p id="loginMessage"></p>
-
-            <p class="switch-text">
-                Don't have an account?
-                <a href="#" id="showRegister">Create Account</a>
+            <p>
+                Request your cheque book online,
+                track your request status,
+                and manage your banking details
+                easily from anywhere.
             </p>
+
+            <div class="home-buttons">
+
+                <!-- Customer Login -->
+                <a href="customer-login.html"
+                   class="home-btn primary-btn">
+                    Customer Login
+                </a>
+
+                <!-- Admin Login -->
+                <a href="admin-login.html"
+                   class="home-btn secondary-btn">
+                    Admin Login
+                </a>
+
+            </div>
 
         </div>
 
 
-        <!-- Registration Section -->
-        <div class="form-box hidden" id="registerBox">
+        <div class="home-card">
 
-            <h1>ChequeBook</h1>
-            <p class="subtitle">Create your customer account</p>
+            <div class="home-card-icon">
+                🏦
+            </div>
 
-            <h2>Customer Registration</h2>
+            <h2>
+                Simple. Secure. Convenient.
+            </h2>
 
-            <form id="registerForm">
-
-                <label>Full Name</label>
-                <input
-                    type="text"
-                    id="registerName"
-                    placeholder="Enter your full name"
-                    required
-                >
-
-                <label>Email</label>
-                <input
-                    type="email"
-                    id="registerEmail"
-                    placeholder="Enter your email"
-                    required
-                >
-
-                <label>Phone Number</label>
-                <input
-                    type="tel"
-                    id="registerPhone"
-                    placeholder="Enter your phone number"
-                    required
-                >
-
-                <label>Password</label>
-                <input
-                    type="password"
-                    id="registerPassword"
-                    placeholder="Create a password"
-                    required
-                >
-
-                <button type="submit">Create Account</button>
-
-            </form>
-
-            <p id="registerMessage"></p>
-
-            <p class="switch-text">
-                Already have an account?
-                <a href="#" id="showLogin">Login</a>
+            <p>
+                Manage your cheque book requests
+                without visiting the bank branch.
             </p>
+
+            <div class="home-feature">
+
+                <span>✓</span>
+                Online Cheque Book Request
+
+            </div>
+
+            <div class="home-feature">
+
+                <span>✓</span>
+                Request Status Tracking
+
+            </div>
+
+            <div class="home-feature">
+
+                <span>✓</span>
+                Customer Account Management
+
+            </div>
 
         </div>
 
-    </div>
+    </section>
 
-    <script src="script.js"></script>
+
+    <!-- FEATURES SECTION -->
+
+    <section class="home-features">
+
+        <h2>
+            Our Services
+        </h2>
+
+        <p class="home-section-text">
+            Everything you need to manage
+            your cheque book requests online.
+        </p>
+
+
+        <div class="feature-grid">
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    📝
+                </div>
+
+                <h3>
+                    Online Request
+                </h3>
+
+                <p>
+                    Submit a cheque book request
+                    quickly through the online system.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    📊
+                </div>
+
+                <h3>
+                    Track Status
+                </h3>
+
+                <p>
+                    Check the current status of your
+                    cheque book request anytime.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🔐
+                </div>
+
+                <h3>
+                    Secure Access
+                </h3>
+
+                <p>
+                    Customer and administrator access
+                    are handled through separate login pages.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- HOW IT WORKS -->
+
+    <section class="how-section">
+
+        <h2>
+            How It Works
+        </h2>
+
+        <div class="steps-grid">
+
+            <div class="step-card">
+
+                <div class="step-number">
+                    1
+                </div>
+
+                <h3>
+                    Register
+                </h3>
+
+                <p>
+                    Create your customer account.
+                </p>
+
+            </div>
+
+
+            <div class="step-card">
+
+                <div class="step-number">
+                    2
+                </div>
+
+                <h3>
+                    Request
+                </h3>
+
+                <p>
+                    Select your account and
+                    cheque book leaves.
+                </p>
+
+            </div>
+
+
+            <div class="step-card">
+
+                <div class="step-number">
+                    3
+                </div>
+
+                <h3>
+                    Track
+                </h3>
+
+                <p>
+                    Monitor your request status
+                    from your dashboard.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer class="home-footer">
+
+        <h3>
+            ChequeBook
+        </h3>
+
+        <p>
+            Online Cheque Book Request System
+        </p>
+
+        <p class="footer-copy">
+            © 2026 ChequeBook. All Rights Reserved.
+        </p>
+
+    </footer>
 
 </body>
+
 </html>
