@@ -19,37 +19,37 @@ public class SecurityConfig {
         http
             .csrf(csrf -> csrf.disable())
             .cors(cors -> cors.configurationSource(corsConfigurationSource()))
-          .authorizeHttpRequests(auth -> auth
-    .requestMatchers(org.springframework.http.HttpMethod.OPTIONS, "/**").permitAll()
-    .anyRequest().permitAll()
-);
+            .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/**").permitAll()
+            );
+
         return http.build();
     }
 
-@Bean
-public CorsConfigurationSource corsConfigurationSource() {
+    @Bean
+    public CorsConfigurationSource corsConfigurationSource() {
 
-    CorsConfiguration configuration = new CorsConfiguration();
+        CorsConfiguration configuration = new CorsConfiguration();
 
-    configuration.setAllowedOriginPatterns(List.of(
-        "https://jeyapradj.github.io",
-        "http://localhost:5500",
-        "http://127.0.0.1:5500"
-    ));
+        configuration.setAllowedOriginPatterns(List.of("*"));
 
-    configuration.setAllowedMethods(List.of(
-        "GET", "POST", "PUT", "DELETE", "OPTIONS"
-    ));
+        configuration.setAllowedMethods(List.of(
+            "GET",
+            "POST",
+            "PUT",
+            "DELETE",
+            "OPTIONS"
+        ));
 
-    configuration.setAllowedHeaders(List.of("*"));
+        configuration.setAllowedHeaders(List.of("*"));
 
-    configuration.setAllowCredentials(true);
+        configuration.setAllowCredentials(false);
 
-    UrlBasedCorsConfigurationSource source =
-            new UrlBasedCorsConfigurationSource();
+        UrlBasedCorsConfigurationSource source =
+                new UrlBasedCorsConfigurationSource();
 
-    source.registerCorsConfiguration("/**", configuration);
+        source.registerCorsConfiguration("/**", configuration);
 
-    return source;
-}
+        return source;
+    }
 }
