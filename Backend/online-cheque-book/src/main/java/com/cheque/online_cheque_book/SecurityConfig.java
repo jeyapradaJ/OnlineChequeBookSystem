@@ -19,10 +19,10 @@ public class SecurityConfig {
         http
             .csrf(csrf -> csrf.disable())
             .cors(cors -> cors.configurationSource(corsConfigurationSource()))
-            .authorizeHttpRequests(auth -> auth
-                .anyRequest().permitAll()
-            );
-
+          .authorizeHttpRequests(auth -> auth
+    .requestMatchers(org.springframework.http.HttpMethod.OPTIONS, "/**").permitAll()
+    .anyRequest().permitAll()
+);
         return http.build();
     }
 
