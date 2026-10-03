@@ -5,89 +5,184 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Request Cheque Book - ChequeBook</title>
+    <title>Request Cheque Book | ChequeBook</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="request-page">
 
-    <div class="dashboard-container">
+    <!-- TOP NAVBAR -->
+    <header class="bank-navbar">
 
-        <!-- Header -->
-        <header class="dashboard-header">
+        <div class="bank-logo">
+
+            <div class="bank-logo-icon">
+                🏦
+            </div>
 
             <div>
                 <h1>ChequeBook</h1>
-                <p>Cheque Book Request</p>
+                <span>Digital Banking</span>
             </div>
 
-            <button id="backBtn">Back to Dashboard</button>
-
-        </header>
+        </div>
 
 
-        <!-- Request Form -->
-        <section class="dashboard-card request-page-card">
+        <button id="backBtn" class="logout-btn">
+            ← Dashboard
+        </button>
 
-            <h2>Request a New Cheque Book</h2>
+    </header>
 
-            <p class="request-description">
-                Select your bank account and choose the number of cheque leaves.
-            </p>
+
+    <!-- MAIN CONTENT -->
+    <main class="request-main">
+
+        <!-- PAGE HEADER -->
+        <section class="request-header">
+
+            <div>
+                <span class="dashboard-label">
+                    CHEQUE SERVICES
+                </span>
+
+                <h2>Request a New Cheque Book</h2>
+
+                <p>
+                    Submit your cheque book request securely
+                    without visiting the bank branch.
+                </p>
+            </div>
+
+            <div class="request-header-icon">
+                📄
+            </div>
+
+        </section>
+
+
+        <!-- REQUEST CARD -->
+        <section class="request-card">
+
+            <div class="request-card-heading">
+
+                <div>
+                    <span class="card-label">
+                        NEW REQUEST
+                    </span>
+
+                    <h3>Cheque Book Details</h3>
+                </div>
+
+                <div class="request-small-icon">
+                    ✓
+                </div>
+
+            </div>
 
 
             <form id="requestForm">
 
-                <!-- Account -->
-                <label for="accountSelect">
-                    Select Account
-                </label>
+                <!-- ACCOUNT -->
+                <div class="request-input-group">
 
-                <select id="accountSelect" required>
-                    <option value="">Loading account...</option>
-                </select>
+                    <label for="accountSelect">
+                        Select Bank Account
+                    </label>
 
+                    <p class="input-help">
+                        Choose the account for which you want
+                        to request a cheque book.
+                    </p>
 
-                <!-- Number of Leaves -->
-                <label for="leavesSelect">
-                    Number of Leaves
-                </label>
+                    <select id="accountSelect" required>
 
-                <select id="leavesSelect" required>
+                        <option value="">
+                            Loading account...
+                        </option>
 
-                    <option value="">
-                        Select number of leaves
-                    </option>
+                    </select>
 
-                    <option value="25">
-                        25 Leaves
-                    </option>
-
-                    <option value="50">
-                        50 Leaves
-                    </option>
-
-                    <option value="100">
-                        100 Leaves
-                    </option>
-
-                </select>
+                </div>
 
 
-                <!-- Submit -->
-                <button type="submit">
+                <!-- LEAVES -->
+                <div class="request-input-group">
+
+                    <label for="leavesSelect">
+                        Number of Cheque Leaves
+                    </label>
+
+                    <p class="input-help">
+                        Select the number of leaves required
+                        in your cheque book.
+                    </p>
+
+                    <select id="leavesSelect" required>
+
+                        <option value="">
+                            Select number of leaves
+                        </option>
+
+                        <option value="25">
+                            25 Leaves
+                        </option>
+
+                        <option value="50">
+                            50 Leaves
+                        </option>
+
+                        <option value="100">
+                            100 Leaves
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- INFORMATION BOX -->
+                <div class="request-info-box">
+
+                    <div class="request-info-icon">
+                        ℹ
+                    </div>
+
+                    <div>
+                        <strong>Before you submit</strong>
+
+                        <p>
+                            Please make sure the selected account
+                            details are correct. Your request will
+                            be sent to the bank for processing.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- SUBMIT -->
+                <button
+                    type="submit"
+                    class="submit-request-btn">
+
                     Submit Cheque Book Request
+
                 </button>
 
             </form>
 
 
-            <p id="requestMessage"></p>
+            <!-- MESSAGE -->
+            <p
+                id="requestMessage"
+                class="request-message">
+            </p>
 
         </section>
 
-    </div>
+    </main>
 
 
     <script src="request.js"></script>

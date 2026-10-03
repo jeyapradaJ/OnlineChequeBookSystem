@@ -10,46 +10,117 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="transfer-page">
 
-    <div class="dashboard-container">
+    <!-- NAVBAR -->
 
-        <header class="dashboard-header">
+    <header class="bank-navbar">
 
-            <div>
-                <h1>🏦 ChequeBook</h1>
+        <div class="bank-logo">
 
-                <p>
-                    Money Transfer
-                </p>
+            <div class="bank-logo-icon">
+                ₹
             </div>
 
-            <button id="backBtn">
-                Back to Dashboard
-            </button>
+            <div>
+                <h1>ChequeBook</h1>
+                <span>Digital Banking</span>
+            </div>
 
-        </header>
+        </div>
 
 
-        <section class="dashboard-card">
+        <button id="backBtn" class="logout-btn">
+            ← Back to Dashboard
+        </button>
 
-            <h2>Transfer Money</h2>
+    </header>
 
-            <div class="info-grid">
+
+    <!-- MAIN -->
+
+    <main class="transfer-main">
+
+        <!-- PAGE HEADER -->
+
+        <section class="transfer-header">
+
+            <div>
+
+                <span class="dashboard-label">
+                    CUSTOMER PORTAL
+                </span>
+
+                <h2>Money Transfer</h2>
+
+                <p>
+                    Transfer money securely from your account
+                    to another bank account.
+                </p>
+
+            </div>
+
+
+            <div class="transfer-header-icon">
+                ₹
+            </div>
+
+        </section>
+
+
+        <!-- ACCOUNT SUMMARY -->
+
+        <section class="transfer-card">
+
+            <div class="transfer-section-heading">
 
                 <div>
+                    <span class="section-label">
+                        YOUR ACCOUNT
+                    </span>
+
+                    <h3>Account Summary</h3>
+                </div>
+
+                <div class="transfer-small-icon">
+                    ₹
+                </div>
+
+            </div>
+
+
+            <div class="transfer-info-grid">
+
+                <div class="transfer-info-item">
+
                     <span>Account Number</span>
-                    <strong id="accountNumber">-</strong>
+
+                    <strong id="accountNumber">
+                        -
+                    </strong>
+
                 </div>
 
-                <div>
+
+                <div class="transfer-info-item">
+
                     <span>Account Type</span>
-                    <strong id="accountType">-</strong>
+
+                    <strong id="accountType">
+                        -
+                    </strong>
+
                 </div>
 
-                <div>
+
+                <div class="transfer-info-item balance-box">
+
                     <span>Available Balance</span>
-                    <strong id="accountBalance">-</strong>
+
+                    <strong id="accountBalance">
+                        -
+                    </strong>
+
                 </div>
 
             </div>
@@ -57,40 +128,112 @@
         </section>
 
 
-        <section class="dashboard-card">
+        <!-- TRANSFER FORM -->
 
-            <h2>Transfer Details</h2>
+        <section class="transfer-card">
+
+            <div class="transfer-section-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        PAYMENT DETAILS
+                    </span>
+
+                    <h3>Transfer Money</h3>
+
+                </div>
+
+                <div class="transfer-small-icon">
+                    →
+                </div>
+
+            </div>
+
 
             <form id="transferForm">
 
-                <label>
-                    Beneficiary Account Number
-                </label>
 
-                <input
-                    type="text"
-                    id="beneficiaryAccount"
-                    placeholder="Enter beneficiary account number"
-                    required
-                >
+                <!-- BENEFICIARY -->
+
+                <div class="transfer-input-group">
+
+                    <label for="beneficiaryAccount">
+                        Beneficiary Account Number
+                    </label>
+
+                    <p class="transfer-help">
+                        Enter the account number of the person receiving the money.
+                    </p>
+
+                    <input
+                        type="text"
+                        id="beneficiaryAccount"
+                        placeholder="Enter beneficiary account number"
+                        required
+                    >
+
+                </div>
 
 
-                <label>
-                    Transfer Amount
-                </label>
+                <!-- AMOUNT -->
 
-                <input
-                    type="number"
-                    id="transferAmount"
-                    placeholder="Enter amount"
-                    min="1"
-                    required
-                >
+                <div class="transfer-input-group">
 
+                    <label for="transferAmount">
+                        Transfer Amount
+                    </label>
+
+                    <p class="transfer-help">
+                        Enter the amount you want to transfer.
+                    </p>
+
+                    <div class="amount-input-wrapper">
+
+                        <span>₹</span>
+
+                        <input
+                            type="number"
+                            id="transferAmount"
+                            placeholder="Enter amount"
+                            min="1"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- INFO -->
+
+                <div class="transfer-info-box">
+
+                    <div class="transfer-info-icon">
+                        i
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Before you continue
+                        </strong>
+
+                        <p>
+                            Please verify the beneficiary account number
+                            and transfer amount before submitting the transaction.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BUTTON -->
 
                 <button
                     type="submit"
-                    class="request-btn">
+                    class="transfer-submit-btn">
 
                     Transfer Money
 
@@ -98,20 +241,27 @@
 
             </form>
 
-            <p id="transferMessage"></p>
+
+            <p id="transferMessage" class="transfer-message"></p>
 
         </section>
 
+    </main>
 
-        <footer class="dashboard-footer">
 
-            <p>
-                © 2026 ChequeBook. All Rights Reserved.
-            </p>
+    <!-- FOOTER -->
 
-        </footer>
+    <footer class="transfer-footer">
 
-    </div>
+        <p>
+            © 2026 ChequeBook. All Rights Reserved.
+        </p>
+
+        <span>
+            Secure Digital Banking
+        </span>
+
+    </footer>
 
 
     <script src="money-transfer.js"></script>

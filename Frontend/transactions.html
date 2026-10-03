@@ -10,50 +10,103 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="transactions-page">
 
-    <div class="dashboard-container">
+    <!-- NAVBAR -->
 
-        <!-- HEADER -->
+    <header class="bank-navbar">
 
-        <header class="dashboard-header">
+        <div class="bank-logo">
+            <div class="bank-logo-icon">₹</div>
 
             <div>
-                <h1>🏦 ChequeBook</h1>
+                <h1>ChequeBook</h1>
+                <span>Digital Banking</span>
+            </div>
+        </div>
+
+        <button id="backBtn" class="logout-btn">
+            ← Back to Dashboard
+        </button>
+
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="transactions-main">
+
+        <!-- PAGE HEADER -->
+
+        <section class="transactions-header">
+
+            <div>
+                <span class="dashboard-label">CUSTOMER PORTAL</span>
+
+                <h2>Transaction History</h2>
 
                 <p>
-                    Transaction History
+                    View and monitor all transactions made through your bank account.
                 </p>
             </div>
 
-            <button id="backBtn">
-                Back to Dashboard
-            </button>
+            <div class="transactions-header-icon">
+                ₹
+            </div>
 
-        </header>
+        </section>
 
 
         <!-- ACCOUNT SUMMARY -->
 
-        <section class="dashboard-card">
+        <section class="transaction-summary-card">
 
-            <h2>Account Summary</h2>
-
-            <div class="info-grid">
+            <div class="section-title-row">
 
                 <div>
+                    <span class="section-label">ACCOUNT DETAILS</span>
+                    <h3>Account Summary</h3>
+                </div>
+
+                <div class="summary-icon">
+                    ₹
+                </div>
+
+            </div>
+
+
+            <div class="transaction-info-grid">
+
+                <div class="transaction-info-item">
+
                     <span>Account Number</span>
-                    <strong id="accountNumber">-</strong>
+
+                    <strong id="accountNumber">
+                        -
+                    </strong>
+
                 </div>
 
-                <div>
+
+                <div class="transaction-info-item">
+
                     <span>Account Type</span>
-                    <strong id="accountType">-</strong>
+
+                    <strong id="accountType">
+                        -
+                    </strong>
+
                 </div>
 
-                <div>
+
+                <div class="transaction-info-item balance-item">
+
                     <span>Current Balance</span>
-                    <strong id="accountBalance">-</strong>
+
+                    <strong id="accountBalance">
+                        -
+                    </strong>
+
                 </div>
 
             </div>
@@ -63,13 +116,26 @@
 
         <!-- TRANSACTION HISTORY -->
 
-        <section class="dashboard-card">
+        <section class="transaction-history-card">
 
-            <h2>Transaction History</h2>
+            <div class="section-title-row">
 
-            <div class="admin-table-wrapper">
+                <div>
+                    <span class="section-label">RECENT ACTIVITY</span>
 
-                <table class="admin-table">
+                    <h3>Transaction History</h3>
+                </div>
+
+                <div class="history-icon">
+                    ↕
+                </div>
+
+            </div>
+
+
+            <div class="transaction-table-wrapper">
+
+                <table class="transaction-table">
 
                     <thead>
 
@@ -84,11 +150,12 @@
 
                     </thead>
 
+
                     <tbody id="transactionBody">
 
                         <tr>
 
-                            <td colspan="6">
+                            <td colspan="6" class="loading-cell">
                                 Loading transactions...
                             </td>
 
@@ -100,18 +167,40 @@
 
             </div>
 
+
+            <div class="transaction-note">
+
+                <span class="note-icon">i</span>
+
+                <div>
+                    <strong>Transaction Information</strong>
+
+                    <p>
+                        Your latest account transactions are displayed above.
+                        Please contact your bank if you notice any unexpected activity.
+                    </p>
+                </div>
+
+            </div>
+
         </section>
 
+    </main>
 
-        <footer class="dashboard-footer">
 
-            <p>
-                © 2026 ChequeBook. All Rights Reserved.
-            </p>
+    <!-- FOOTER -->
 
-        </footer>
+    <footer class="transactions-footer">
 
-    </div>
+        <p>
+            © 2026 ChequeBook. All Rights Reserved.
+        </p>
+
+        <span>
+            Secure Digital Banking
+        </span>
+
+    </footer>
 
 
     <script src="transactions.js"></script>

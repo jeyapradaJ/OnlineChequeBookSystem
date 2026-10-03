@@ -1,1114 +1,3995 @@
+/* =========================================
+   CHEQUEBOOK - PREMIUM BANKING THEME
+   Dark Brown + Cream + Gold
+   ========================================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background: #f1f5f9;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.container {
-    width: 100%;
-    max-width: 450px;
-    padding: 20px;
-}
-
-.form-box {
-    background: white;
-    padding: 35px;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-}
-
-.form-box h1 {
-    text-align: center;
-    color: #123c69;
-    margin-bottom: 8px;
-}
-
-.subtitle {
-    text-align: center;
-    color: #64748b;
-    margin-bottom: 25px;
-    font-size: 14px;
-}
-
-.form-box h2 {
-    text-align: center;
-    color: #1e293b;
-    margin-bottom: 25px;
-}
-
-label {
-    display: block;
-    margin-bottom: 7px;
-    color: #334155;
-    font-weight: bold;
-    font-size: 14px;
-}
-
-input {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 18px;
-    border: 1px solid #cbd5e1;
-    border-radius: 8px;
-    font-size: 14px;
-    outline: none;
-}
-
-input:focus {
-    border-color: #2563eb;
-}
-
-button {
-    width: 100%;
-    padding: 13px;
-    background: #123c69;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #0f3155;
-}
-
-.switch-text {
-    text-align: center;
-    margin-top: 20px;
-    color: #64748b;
-    font-size: 14px;
-}
-
-.switch-text a {
-    color: #2563eb;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.hidden {
-    display: none;
-}
-
-#loginMessage,
-#registerMessage {
-    text-align: center;
-    margin-top: 15px;
-    font-size: 14px;
-}
-/* =========================
-   CUSTOMER DASHBOARD
-   ========================= */
-
-.dashboard-container {
-    width: 100%;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 25px;
-}
-
-.dashboard-header {
-    background: #123c69;
-    color: white;
-    padding: 20px 25px;
-    border-radius: 12px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 25px;
-}
-
-.dashboard-header h1 {
-    margin-bottom: 5px;
-}
-
-.dashboard-header p {
-    font-size: 14px;
-    opacity: 0.9;
-}
-
-#logoutBtn {
-    width: auto;
-    padding: 10px 20px;
-    background: white;
-    color: #123c69;
-}
-
-#logoutBtn:hover {
-    background: #e2e8f0;
-}
-
-.welcome-section {
-    margin-bottom: 25px;
-}
-
-.welcome-section h2 {
-    color: #1e293b;
-    margin-bottom: 8px;
-}
-
-.welcome-section p {
-    color: #64748b;
-}
-
-.dashboard-card {
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
-    margin-bottom: 20px;
-    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
-}
-
-.dashboard-card h2 {
-    color: #123c69;
-    margin-bottom: 20px;
-}
-
-.info-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.info-grid div {
-    background: #f8fafc;
-    padding: 18px;
-    border-radius: 8px;
-}
-
-.info-grid span {
-    display: block;
-    color: #64748b;
-    font-size: 13px;
-    margin-bottom: 8px;
-}
-
-.info-grid strong {
-    color: #1e293b;
-    font-size: 16px;
-}
-
-.request-btn {
-    width: auto;
-    margin-top: 20px;
-    padding: 12px 22px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #FDF6E3;
+    color: #3E2723;
+    line-height: 1.6;
 }
 
 
-/* Mobile responsive design */
-
-@media (max-width: 700px) {
-
-    .dashboard-container {
-        padding: 15px;
-    }
-
-    .dashboard-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-    }
-
-    #logoutBtn {
-        width: 100%;
-    }
-
-    .info-grid {
-        grid-template-columns: 1fr;
-    }
-
-}
-/* =========================
-   CHEQUE BOOK REQUEST PAGE
-   ========================= */
-
-.request-page-card {
-    max-width: 650px;
-    margin: 0 auto;
-}
-
-.request-description {
-    color: #64748b;
-    margin-bottom: 25px;
-}
-
-#requestForm {
-    display: flex;
-    flex-direction: column;
-}
-
-#requestForm select {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
-    border: 1px solid #cbd5e1;
-    border-radius: 8px;
-    background: white;
-    font-size: 14px;
-    outline: none;
-}
-
-#requestForm select:focus {
-    border-color: #2563eb;
-}
-
-#requestMessage {
-    text-align: center;
-    margin-top: 20px;
-    font-weight: bold;
-}
-
-#backBtn {
-    width: auto;
-    padding: 10px 20px;
-    background: white;
-    color: #123c69;
-}
-
-#backBtn:hover {
-    background: #e2e8f0;
-}
-/* =========================
-   ADMIN DASHBOARD
-   ========================= */
-
-.admin-table-wrapper {
-    width: 100%;
-    overflow-x: auto;
-}
-
-.admin-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-    background: white;
-}
-
-.admin-table th {
-    background: #123c69;
-    color: white;
-    padding: 14px;
-    text-align: left;
-    font-size: 14px;
-}
-
-.admin-table td {
-    padding: 14px;
-    border-bottom: 1px solid #e2e8f0;
-    color: #334155;
-    font-size: 14px;
-}
-
-.admin-table tr:hover {
-    background: #f8fafc;
-}
-
-.admin-table select {
-    padding: 8px 10px;
-    border: 1px solid #cbd5e1;
-    border-radius: 6px;
-    background: white;
-    cursor: pointer;
-    font-size: 13px;
-}
-
-.status-badge {
-    display: inline-block;
-    padding: 6px 10px;
-    border-radius: 6px;
-    background: #e2e8f0;
-    color: #1e293b;
-    font-weight: bold;
-    font-size: 12px;
-}
-
-
-/* Admin dashboard statistics */
-
-#totalCustomers,
-#totalRequests,
-#pendingRequests {
-    font-size: 24px;
-    color: #123c69;
-}
-
-
-/* Mobile Admin Table */
-
-@media (max-width: 700px) {
-
-    .admin-table th,
-    .admin-table td {
-        padding: 10px;
-        font-size: 12px;
-    }
-
-    .admin-table select {
-        font-size: 12px;
-    }
-
-}
 /* =========================================
-   PROFESSIONAL HOME PAGE
+   HERO SECTION
    ========================================= */
 
 .home-hero {
-    width: 100%;
-    min-height: 620px;
-    padding: 80px 8%;
-    background: linear-gradient(
-        135deg,
-        #123c69,
-        #2563a6
-    );
-
+    min-height: 100vh;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     gap: 60px;
+
+    padding: 80px 9%;
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(212, 175, 55, 0.16),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #3E2723,
+            #2A1916
+        );
 
     color: white;
 }
 
+
+/* LEFT CONTENT */
 
 .home-content {
     max-width: 650px;
 }
 
-
 .home-content h1 {
-    font-size: 52px;
-    line-height: 1.15;
+    font-size: 58px;
+    line-height: 1.12;
+    font-weight: 700;
+    letter-spacing: -1px;
     margin-bottom: 25px;
 }
 
+.home-content h1::after {
+    content: "";
+    display: block;
+    width: 90px;
+    height: 4px;
+    background: #D4AF37;
+    margin-top: 25px;
+    border-radius: 10px;
+}
 
 .home-content p {
+    max-width: 560px;
     font-size: 18px;
-    line-height: 1.7;
-    color: #e2e8f0;
+    color: #E7DCC6;
     margin-bottom: 35px;
 }
 
 
+/* BUTTONS */
+
 .home-buttons {
     display: flex;
-    gap: 15px;
+    gap: 18px;
     flex-wrap: wrap;
 }
 
-
 .home-btn {
     display: inline-block;
-    padding: 14px 25px;
-    border-radius: 8px;
     text-decoration: none;
-    font-weight: bold;
-    font-size: 15px;
-}
 
+    padding: 14px 28px;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+}
 
 .primary-btn {
-    background: white;
-    color: #123c69;
+    background: #D4AF37;
+    color: #3E2723;
 }
-
 
 .primary-btn:hover {
-    background: #e2e8f0;
+    background: #E7C65A;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.25);
 }
-
 
 .secondary-btn {
+    border: 1px solid #D4AF37;
+    color: #D4AF37;
     background: transparent;
-    color: white;
-    border: 2px solid white;
 }
-
 
 .secondary-btn:hover {
-    background: white;
-    color: #123c69;
+    background: #D4AF37;
+    color: #3E2723;
+    transform: translateY(-3px);
 }
 
+
+/* =========================================
+   HERO CARD
+   ========================================= */
 
 .home-card {
-    width: 380px;
-    padding: 35px;
-    background: white;
-    color: #1e293b;
-    border-radius: 18px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-}
+    width: 390px;
 
+    padding: 40px;
 
-.home-card-icon {
-    font-size: 50px;
-    margin-bottom: 15px;
-}
+    background: #FDF6E3;
+    color: #3E2723;
 
-
-.home-card h2 {
-    color: #123c69;
-    margin-bottom: 12px;
-}
-
-
-.home-card p {
-    color: #64748b;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-
-.home-feature {
-    padding: 12px 0;
-    border-bottom: 1px solid #e2e8f0;
-    color: #334155;
-}
-
-
-.home-feature span {
-    color: #16a34a;
-    font-weight: bold;
-    margin-right: 8px;
-}
-
-
-/* SERVICES */
-
-.home-features {
-    padding: 75px 8%;
-    text-align: center;
-    background: #f8fafc;
-}
-
-
-.home-features h2,
-.how-section h2 {
-    font-size: 34px;
-    color: #123c69;
-    margin-bottom: 12px;
-}
-
-
-.home-section-text {
-    color: #64748b;
-    margin-bottom: 40px;
-}
-
-
-.feature-grid {
-    max-width: 1100px;
-    margin: auto;
-
-    display: grid;
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 25px;
-}
-
-
-.feature-card {
-    background: white;
-    padding: 30px;
-    border-radius: 14px;
+    border-radius: 20px;
 
     box-shadow:
-        0 5px 20px rgba(0, 0, 0, 0.07);
+        0 25px 60px rgba(0, 0, 0, 0.35);
+
+    border: 1px solid rgba(212, 175, 55, 0.4);
+
+    position: relative;
 }
 
+.home-card::before {
+    content: "";
+    position: absolute;
 
-.feature-icon {
-    font-size: 40px;
-    margin-bottom: 15px;
+    width: 100px;
+    height: 100px;
+
+    background: rgba(212, 175, 55, 0.15);
+
+    border-radius: 50%;
+
+    right: -30px;
+    top: -30px;
+
+    z-index: 0;
 }
 
-
-.feature-card h3 {
-    color: #123c69;
-    margin-bottom: 12px;
-}
-
-
-.feature-card p {
-    color: #64748b;
-    line-height: 1.6;
-}
-
-
-/* HOW IT WORKS */
-
-.how-section {
-    padding: 75px 8%;
-    text-align: center;
-    background: white;
-}
-
-
-.steps-grid {
-    max-width: 1000px;
-    margin: 45px auto 0;
-
-    display: grid;
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 30px;
-}
-
-
-.step-card {
-    padding: 25px;
-}
-
-
-.step-number {
-    width: 55px;
-    height: 55px;
-
-    margin: 0 auto 18px;
+.home-card-icon {
+    width: 65px;
+    height: 65px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
+    background: #3E2723;
+    color: #D4AF37;
+
+    border-radius: 15px;
+
+    font-size: 30px;
+
+    margin-bottom: 22px;
+
+    position: relative;
+    z-index: 1;
+}
+
+.home-card h2 {
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+.home-card p {
+    color: #6D574F;
+    margin-bottom: 25px;
+}
+
+.home-feature {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 13px 0;
+
+    border-bottom: 1px solid #E7DCC6;
+
+    font-size: 15px;
+}
+
+.home-feature:last-child {
+    border-bottom: none;
+}
+
+.home-feature span {
+    width: 25px;
+    height: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #D4AF37;
+    color: #3E2723;
+
     border-radius: 50%;
 
-    background: #123c69;
-    color: white;
-
-    font-size: 22px;
     font-weight: bold;
 }
 
 
-.step-card h3 {
-    color: #123c69;
+/* =========================================
+   FEATURES SECTION
+   ========================================= */
+
+.home-features {
+    padding: 90px 9%;
+    text-align: center;
+
+    background: #FDF6E3;
+}
+
+.home-features h2,
+.how-section h2 {
+    font-size: 38px;
+    color: #3E2723;
     margin-bottom: 10px;
 }
 
-
-.step-card p {
-    color: #64748b;
+.home-section-text {
+    color: #806C63;
+    margin-bottom: 45px;
 }
 
 
-/* FOOTER */
+/* FEATURE GRID */
 
-.home-footer {
-    padding: 35px 20px;
-    background: #0f2f52;
-    color: white;
+.feature-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+    max-width: 1100px;
+
+    margin: auto;
+}
+
+.feature-card {
+    background: white;
+
+    padding: 35px 28px;
+
+    border-radius: 16px;
+
+    border: 1px solid #E7DCC6;
+
+    transition: all 0.3s ease;
+
+    box-shadow:
+        0 8px 25px rgba(62, 39, 35, 0.07);
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+
+    border-color: #D4AF37;
+
+    box-shadow:
+        0 18px 40px rgba(62, 39, 35, 0.13);
+}
+
+.feature-icon {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 20px;
+
+    background: #3E2723;
+    color: #D4AF37;
+
+    border-radius: 15px;
+
+    font-size: 27px;
+}
+
+.feature-card h3 {
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    color: #806C63;
+    font-size: 15px;
+}
+
+
+/* =========================================
+   HOW IT WORKS
+   ========================================= */
+
+.how-section {
+    padding: 90px 9%;
+
     text-align: center;
+
+    background: #E7DCC6;
 }
 
+.steps-grid {
+    display: grid;
 
-.home-footer h3 {
-    font-size: 24px;
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+    max-width: 1000px;
+
+    margin: 50px auto 0;
+}
+
+.step-card {
+    background: #FDF6E3;
+
+    padding: 35px 25px;
+
+    border-radius: 16px;
+
+    border: 1px solid rgba(62, 39, 35, 0.1);
+
+    position: relative;
+}
+
+.step-number {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    background: #D4AF37;
+    color: #3E2723;
+
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.step-card h3 {
+    font-size: 21px;
     margin-bottom: 8px;
 }
 
+.step-card p {
+    color: #806C63;
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+.home-footer {
+    background: #2A1916;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 45px 20px;
+}
+
+.home-footer h3 {
+    color: #D4AF37;
+
+    font-size: 25px;
+
+    margin-bottom: 8px;
+}
 
 .home-footer p {
-    color: #cbd5e1;
+    color: #E7DCC6;
 }
-
 
 .footer-copy {
-    margin-top: 20px;
+    margin-top: 18px;
+
     font-size: 13px;
+
+    color: #A99388 !important;
 }
 
 
-/* HOME PAGE RESPONSIVE */
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
 
-@media (max-width: 850px) {
+@media (max-width: 900px) {
 
     .home-hero {
         flex-direction: column;
-        text-align: center;
-        padding: 60px 25px;
-    }
 
+        text-align: center;
+
+        padding: 70px 6%;
+    }
 
     .home-content h1 {
-        font-size: 40px;
+        font-size: 45px;
     }
 
+    .home-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
 
     .home-buttons {
         justify-content: center;
     }
-
 
     .home-card {
         width: 100%;
         max-width: 450px;
     }
 
-
     .feature-grid,
     .steps-grid {
         grid-template-columns: 1fr;
+        max-width: 500px;
     }
-
 }
 
 
 @media (max-width: 500px) {
 
-    .home-content h1 {
-        font-size: 32px;
+    .home-hero {
+        padding: 55px 5%;
     }
 
+    .home-content h1 {
+        font-size: 36px;
+    }
 
     .home-content p {
         font-size: 16px;
     }
 
+    .home-buttons {
+        flex-direction: column;
+    }
 
     .home-btn {
         width: 100%;
         text-align: center;
     }
 
+    .home-card {
+        padding: 30px 25px;
+    }
+
+    .home-features,
+    .how-section {
+        padding: 65px 5%;
+    }
+
+    .home-features h2,
+    .how-section h2 {
+        font-size: 30px;
+    }
 }
 /* =========================================
-   CHEQUEBOOK HOME PAGE
+   CUSTOMER AUTH PAGE
    ========================================= */
 
-.home-hero {
-    width: 100%;
-    padding: 55px 8%;
-    background: linear-gradient(135deg, #123c69, #2563a6);
-    color: white;
+.auth-page {
+    min-height: 100vh;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 45px;
-}
-
-.home-content {
-    max-width: 600px;
-}
-
-.home-content h1 {
-    font-size: 42px;
-    line-height: 1.2;
-    margin-bottom: 18px;
-}
-
-.home-content p {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #e2e8f0;
-    margin-bottom: 25px;
-}
-
-.home-buttons {
-    display: flex;
-    gap: 12px;
-}
-
-.home-btn {
-    display: inline-block;
-    padding: 11px 20px;
-    border-radius: 7px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 14px;
-}
-
-.primary-btn {
-    background: white;
-    color: #123c69;
-}
-
-.secondary-btn {
-    background: transparent;
-    color: white;
-    border: 1px solid white;
-}
-
-.home-card {
-    width: 330px;
-    padding: 25px;
-    background: white;
-    color: #1e293b;
-    border-radius: 14px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-
-.home-card-icon {
-    font-size: 40px;
-    margin-bottom: 10px;
-}
-
-.home-card h2 {
-    color: #123c69;
-    font-size: 21px;
-    margin-bottom: 8px;
-}
-
-.home-card p {
-    color: #64748b;
-    font-size: 14px;
-    line-height: 1.5;
-    margin-bottom: 15px;
-}
-
-.home-feature {
-    padding: 9px 0;
-    border-bottom: 1px solid #e2e8f0;
-    font-size: 14px;
-}
-
-.home-feature span {
-    color: #16a34a;
-    font-weight: bold;
-    margin-right: 7px;
-}
-
-
-/* SERVICES */
-
-.home-features {
-    width: 100%;
-    padding: 50px 8%;
-    background: #f8fafc;
-    text-align: center;
-}
-
-.home-features h2,
-.how-section h2 {
-    font-size: 28px;
-    color: #123c69;
-    margin-bottom: 8px;
-}
-
-.home-section-text {
-    color: #64748b;
-    font-size: 14px;
-    margin-bottom: 28px;
-}
-
-.feature-grid {
-    max-width: 1000px;
-    margin: auto;
-
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.feature-card {
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-}
-
-.feature-icon {
-    font-size: 32px;
-    margin-bottom: 10px;
-}
-
-.feature-card h3 {
-    color: #123c69;
-    margin-bottom: 8px;
-}
-
-.feature-card p {
-    color: #64748b;
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-
-/* HOW IT WORKS */
-
-.how-section {
-    width: 100%;
-    padding: 50px 8%;
-    background: white;
-    text-align: center;
-}
-
-.steps-grid {
-    max-width: 900px;
-    margin: 30px auto 0;
-
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-}
-
-.step-card {
-    padding: 15px;
-}
-
-.step-number {
-    width: 45px;
-    height: 45px;
-    margin: 0 auto 12px;
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(212, 175, 55, 0.12),
+            transparent 30%
+        ),
+        #FDF6E3;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    border-radius: 50%;
-    background: #123c69;
+    padding: 40px 20px;
+}
+
+
+.auth-container {
+    width: 100%;
+    max-width: 1050px;
+
+    min-height: 620px;
+
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+
+    background: white;
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 25px 70px rgba(62, 39, 35, 0.18);
+}
+
+
+/* LEFT BRAND AREA */
+
+.auth-brand {
+    background:
+        linear-gradient(
+            145deg,
+            #3E2723,
+            #241512
+        );
+
     color: white;
 
-    font-size: 18px;
+    padding: 65px 50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.brand-logo {
+    width: 70px;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #D4AF37;
+
+    color: #3E2723;
+
+    border-radius: 18px;
+
+    font-size: 32px;
+
+    margin-bottom: 25px;
+}
+
+
+.auth-brand h1 {
+    font-size: 40px;
+    margin-bottom: 12px;
+}
+
+
+.auth-brand > p {
+    color: #E7DCC6;
+
+    max-width: 350px;
+
+    margin-bottom: 35px;
+}
+
+
+.auth-highlight {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 12px 0;
+
+    color: #F5EBDD;
+
+    font-size: 15px;
+}
+
+
+.auth-highlight span {
+    width: 27px;
+    height: 27px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #D4AF37;
+
+    color: #3E2723;
+
+    border-radius: 50%;
+
     font-weight: bold;
 }
 
-.step-card h3 {
-    color: #123c69;
+
+/* RIGHT LOGIN CARD */
+
+.auth-card {
+    padding: 55px 65px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.back-home {
+    align-self: flex-start;
+
+    text-decoration: none;
+
+    color: #806C63;
+
+    font-size: 14px;
+
+    margin-bottom: 35px;
+
+    transition: 0.3s;
+}
+
+
+.back-home:hover {
+    color: #D4AF37;
+}
+
+
+.auth-small-title {
+    color: #B28C20;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+.auth-heading h2 {
+    color: #3E2723;
+
+    font-size: 38px;
+
+    margin: 7px 0;
+}
+
+
+.auth-heading p {
+    color: #806C63;
+
+    margin-bottom: 30px;
+}
+
+
+/* INPUTS */
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+
+.input-group label {
+    display: block;
+
+    color: #3E2723;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    margin-bottom: 8px;
+}
+
+
+.input-group input {
+    width: 100%;
+
+    padding: 14px 15px;
+
+    border: 1px solid #DCCFC5;
+
+    border-radius: 9px;
+
+    outline: none;
+
+    font-size: 15px;
+
+    color: #3E2723;
+
+    background: #FFFCF5;
+
+    transition: 0.3s;
+}
+
+
+.input-group input:focus {
+    border-color: #D4AF37;
+
+    box-shadow:
+        0 0 0 3px rgba(212, 175, 55, 0.12);
+}
+
+
+.input-group input::placeholder {
+    color: #AA9B94;
+}
+
+
+/* LOGIN BUTTON */
+
+.auth-btn {
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #3E2723;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.auth-btn:hover {
+    background: #D4AF37;
+
+    color: #3E2723;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(212, 175, 55, 0.25);
+}
+
+
+/* MESSAGE */
+
+.auth-message {
+    text-align: center;
+
+    min-height: 22px;
+
+    margin-top: 12px;
+
+    font-size: 14px;
+}
+
+
+/* DIVIDER */
+
+.auth-divider {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 25px 0 18px;
+
+    color: #A28F86;
+
+    font-size: 13px;
+}
+
+
+.auth-divider::before,
+.auth-divider::after {
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background: #E7DCC6;
+}
+
+
+/* REGISTER BUTTON */
+
+.register-btn {
+    display: block;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    padding: 13px;
+
+    border: 1px solid #D4AF37;
+
+    border-radius: 9px;
+
+    color: #3E2723;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+
+.register-btn:hover {
+    background: #D4AF37;
+}
+
+
+/* FOOTER TEXT */
+
+.auth-footer-text {
+    text-align: center;
+
+    color: #A28F86;
+
+    font-size: 12px;
+
+    margin-top: 22px;
+}
+
+
+/* =========================================
+   AUTH RESPONSIVE
+   ========================================= */
+
+@media (max-width: 800px) {
+
+    .auth-container {
+        grid-template-columns: 1fr;
+    }
+
+    .auth-brand {
+        padding: 40px 30px;
+
+        text-align: center;
+
+        align-items: center;
+    }
+
+    .auth-brand > p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .auth-card {
+        padding: 40px 30px;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .auth-page {
+        padding: 15px;
+    }
+
+    .auth-brand h1 {
+        font-size: 32px;
+    }
+
+    .auth-heading h2 {
+        font-size: 30px;
+    }
+
+    .auth-card {
+        padding: 30px 22px;
+    }
+}
+/* =========================================
+   CUSTOMER DASHBOARD
+   PREMIUM BANKING STYLE
+   ========================================= */
+
+.customer-dashboard-page {
+    min-height: 100vh;
+    background: #FDF6E3;
+}
+
+
+/* =========================================
+   NAVBAR
+   ========================================= */
+
+.bank-navbar {
+    height: 82px;
+
+    background: #3E2723;
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    box-shadow:
+        0 5px 20px rgba(62, 39, 35, 0.15);
+}
+
+
+.bank-logo {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.bank-logo-icon {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #D4AF37;
+
+    color: #3E2723;
+
+    border-radius: 11px;
+
+    font-size: 22px;
+}
+
+
+.bank-logo h1 {
+    font-size: 21px;
+
+    line-height: 1.1;
+}
+
+
+.bank-logo span {
+    color: #D8C8B9;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+}
+
+
+/* LOGOUT */
+
+.logout-btn {
+    padding: 10px 20px;
+
+    border: 1px solid #D4AF37;
+
+    background: transparent;
+
+    color: #D4AF37;
+
+    border-radius: 7px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.logout-btn:hover {
+    background: #D4AF37;
+
+    color: #3E2723;
+}
+
+
+/* =========================================
+   MAIN
+   ========================================= */
+
+.dashboard-main {
+    width: 90%;
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 45px 0 70px;
+}
+
+
+/* =========================================
+   WELCOME
+   ========================================= */
+
+.dashboard-welcome {
+    background:
+        linear-gradient(
+            135deg,
+            #3E2723,
+            #5A3B32
+        );
+
+    color: white;
+
+    border-radius: 20px;
+
+    padding: 35px 40px;
+
+    margin-bottom: 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+
+.dashboard-welcome::after {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    border-radius: 50%;
+
+    background: rgba(212, 175, 55, 0.12);
+
+    right: -70px;
+    top: -80px;
+}
+
+
+.dashboard-label,
+.card-label {
+    color: #B28C20;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+.dashboard-welcome .dashboard-label {
+    color: #D4AF37;
+}
+
+
+.dashboard-welcome h2 {
+    font-size: 31px;
+
+    margin: 7px 0;
+}
+
+
+.dashboard-welcome h2 span {
+    color: #D4AF37;
+}
+
+
+.dashboard-welcome p {
+    color: #E7DCC6;
+
+    max-width: 600px;
+}
+
+
+.welcome-icon {
+    width: 85px;
+    height: 85px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(212, 175, 55, 0.4);
+
+    border-radius: 20px;
+
+    font-size: 38px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================
+   DASHBOARD CARDS
+   ========================================= */
+
+.dashboard-card {
+    background: white;
+
+    padding: 30px;
+
+    margin-bottom: 25px;
+
+    border-radius: 18px;
+
+    border: 1px solid #E7DCC6;
+
+    box-shadow:
+        0 7px 25px rgba(62, 39, 35, 0.06);
+}
+
+
+.card-heading {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+}
+
+
+.card-heading h2 {
+    color: #3E2723;
+
+    font-size: 22px;
+
+    margin-top: 3px;
+}
+
+
+.card-icon {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #FDF6E3;
+
+    border: 1px solid #E7DCC6;
+
+    border-radius: 10px;
+
+    font-size: 21px;
+}
+
+
+/* =========================================
+   INFORMATION
+   ========================================= */
+
+.info-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+
+.info-item {
+    padding: 18px;
+
+    background: #FFFCF5;
+
+    border: 1px solid #EEE3D5;
+
+    border-radius: 10px;
+}
+
+
+.info-item span,
+.account-item span,
+.account-balance span {
+    display: block;
+
+    color: #8B7770;
+
+    font-size: 12px;
+
     margin-bottom: 6px;
 }
 
-.step-card p {
-    color: #64748b;
+
+.info-item strong {
+    color: #3E2723;
+
+    font-size: 15px;
+
+    word-break: break-word;
+}
+
+
+/* =========================================
+   ACCOUNT
+   ========================================= */
+
+.account-summary {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr 1.2fr;
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+
+.account-item,
+.account-balance {
+    padding: 22px;
+
+    border-radius: 12px;
+}
+
+
+.account-item {
+    background: #FFFCF5;
+
+    border: 1px solid #EEE3D5;
+}
+
+
+.account-item strong {
+    color: #3E2723;
+
+    font-size: 17px;
+}
+
+
+.account-balance {
+    background:
+        linear-gradient(
+            135deg,
+            #3E2723,
+            #5A3B32
+        );
+
+    color: white;
+}
+
+
+.account-balance span {
+    color: #D8C8B9;
+}
+
+
+.account-balance strong {
+    color: #D4AF37;
+
+    font-size: 27px;
+}
+
+
+/* =========================================
+   ACTION BUTTONS
+   ========================================= */
+
+.dashboard-actions {
+    display: flex;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+
+.dashboard-action-btn {
+    padding: 12px 18px;
+
+    border: 1px solid #D4AF37;
+
+    border-radius: 8px;
+
+    background: white;
+
+    color: #3E2723;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.dashboard-action-btn:hover {
+    background: #D4AF37;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   TABLE
+   ========================================= */
+
+.table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+
+    margin-bottom: 25px;
+}
+
+
+.bank-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 650px;
+}
+
+
+.bank-table th {
+    background: #3E2723;
+
+    color: #FDF6E3;
+
+    padding: 14px 16px;
+
+    text-align: left;
+
+    font-size: 13px;
+}
+
+
+.bank-table td {
+    padding: 14px 16px;
+
+    border-bottom: 1px solid #EEE3D5;
+
+    color: #594740;
+
     font-size: 14px;
+}
+
+
+.bank-table tbody tr:hover {
+    background: #FFFCF5;
+}
+
+
+/* =========================================
+   CHEQUE REQUEST BUTTON
+   ========================================= */
+
+.request-cheque-btn {
+    padding: 13px 22px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #D4AF37;
+
+    color: #3E2723;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.request-cheque-btn:hover {
+    background: #B8941F;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(212, 175, 55, 0.2);
+}
+
+
+/* =========================================
+   DASHBOARD RESPONSIVE
+   ========================================= */
+
+@media (max-width: 800px) {
+
+    .bank-navbar {
+        padding: 0 5%;
+    }
+
+    .dashboard-main {
+        width: 92%;
+    }
+
+    .dashboard-welcome {
+        padding: 30px;
+
+        align-items: flex-start;
+    }
+
+    .welcome-icon {
+        display: none;
+    }
+
+    .info-grid,
+    .account-summary {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .bank-navbar {
+        height: 72px;
+    }
+
+    .bank-logo h1 {
+        font-size: 18px;
+    }
+
+    .bank-logo span {
+        display: none;
+    }
+
+    .logout-btn {
+        padding: 8px 13px;
+    }
+
+    .dashboard-main {
+        padding-top: 25px;
+    }
+
+    .dashboard-welcome {
+        padding: 25px 20px;
+    }
+
+    .dashboard-welcome h2 {
+        font-size: 24px;
+    }
+
+    .dashboard-card {
+        padding: 20px;
+    }
+
+    .card-heading h2 {
+        font-size: 19px;
+    }
+}
+/* =========================================
+   CHEQUE BOOK REQUEST PAGE
+   ========================================= */
+
+.request-page {
+    min-height: 100vh;
+    background: #FDF6E3;
+}
+
+
+/* MAIN */
+
+.request-main {
+    width: 90%;
+    max-width: 1050px;
+
+    margin: auto;
+
+    padding: 45px 0 70px;
+}
+
+
+/* =========================================
+   REQUEST HEADER
+   ========================================= */
+
+.request-header {
+    background:
+        linear-gradient(
+            135deg,
+            #3E2723,
+            #5A3B32
+        );
+
+    color: white;
+
+    border-radius: 20px;
+
+    padding: 35px 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.request-header::after {
+    content: "";
+
+    position: absolute;
+
+    width: 200px;
+    height: 200px;
+
+    border-radius: 50%;
+
+    background: rgba(212, 175, 55, 0.12);
+
+    right: -60px;
+    top: -70px;
+}
+
+
+.request-header h2 {
+    font-size: 32px;
+
+    margin: 7px 0;
+}
+
+
+.request-header p {
+    color: #E7DCC6;
+
+    max-width: 600px;
+}
+
+
+.request-header .dashboard-label {
+    color: #D4AF37;
+}
+
+
+.request-header-icon {
+    width: 80px;
+    height: 80px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(212, 175, 55, 0.4);
+
+    border-radius: 18px;
+
+    font-size: 36px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================
+   REQUEST CARD
+   ========================================= */
+
+.request-card {
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 40px;
+
+    border: 1px solid #E7DCC6;
+
+    box-shadow:
+        0 10px 30px rgba(62, 39, 35, 0.07);
+
+    max-width: 850px;
+
+    margin: auto;
+}
+
+
+.request-card-heading {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 30px;
+}
+
+
+.request-card-heading h3 {
+    color: #3E2723;
+
+    font-size: 24px;
+
+    margin-top: 4px;
+}
+
+
+.request-small-icon {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: #FDF6E3;
+
+    color: #B28C20;
+
+    border: 1px solid #E7DCC6;
+
+    font-weight: bold;
+}
+
+
+/* =========================================
+   INPUT GROUP
+   ========================================= */
+
+.request-input-group {
+    margin-bottom: 25px;
+}
+
+
+.request-input-group label {
+    display: block;
+
+    color: #3E2723;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    margin-bottom: 5px;
+}
+
+
+.input-help {
+    color: #8B7770;
+
+    font-size: 13px;
+
+    margin-bottom: 10px;
+}
+
+
+.request-input-group select {
+    width: 100%;
+
+    padding: 14px 15px;
+
+    border: 1px solid #DCCFC5;
+
+    border-radius: 9px;
+
+    background: #FFFCF5;
+
+    color: #3E2723;
+
+    font-size: 15px;
+
+    outline: none;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.request-input-group select:focus {
+    border-color: #D4AF37;
+
+    box-shadow:
+        0 0 0 3px rgba(212, 175, 55, 0.12);
+}
+
+
+/* =========================================
+   INFORMATION BOX
+   ========================================= */
+
+.request-info-box {
+    display: flex;
+
+    gap: 14px;
+
+    padding: 17px;
+
+    margin: 30px 0;
+
+    background: #FDF6E3;
+
+    border: 1px solid #E7DCC6;
+
+    border-left: 4px solid #D4AF37;
+
+    border-radius: 10px;
+}
+
+
+.request-info-icon {
+    width: 28px;
+    height: 28px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #D4AF37;
+
+    color: #3E2723;
+
+    border-radius: 50%;
+
+    font-weight: bold;
+}
+
+
+.request-info-box strong {
+    color: #3E2723;
+
+    font-size: 14px;
+}
+
+
+.request-info-box p {
+    color: #806C63;
+
+    font-size: 13px;
+
+    margin-top: 3px;
+}
+
+
+/* =========================================
+   SUBMIT BUTTON
+   ========================================= */
+
+.submit-request-btn {
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #D4AF37;
+
+    color: #3E2723;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.submit-request-btn:hover {
+    background: #B8941F;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(212, 175, 55, 0.2);
+}
+
+
+/* =========================================
+   REQUEST MESSAGE
+   ========================================= */
+
+.request-message {
+    text-align: center;
+
+    min-height: 24px;
+
+    margin-top: 18px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 700px) {
+
+    .request-main {
+        width: 92%;
+
+        padding-top: 25px;
+    }
+
+    .request-header {
+        padding: 28px;
+
+        align-items: flex-start;
+    }
+
+    .request-header h2 {
+        font-size: 26px;
+    }
+
+    .request-header-icon {
+        display: none;
+    }
+
+    .request-card {
+        padding: 25px 20px;
+    }
+}
+/* =====================================================
+   TRANSACTIONS PAGE
+   PREMIUM BANKING THEME
+   Dark Brown + Cream + Gold
+===================================================== */
+
+.transactions-page {
+    min-height: 100vh;
+    background: #FDF6E3;
+}
+
+
+/* NAVBAR */
+
+.transactions-page .bank-navbar {
+    background: #3E2723;
+    color: white;
+    padding: 18px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 15px rgba(62, 39, 35, 0.15);
+}
+
+.transactions-page .bank-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.transactions-page .bank-logo-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    background: #D4AF37;
+    color: #3E2723;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.transactions-page .bank-logo h1 {
+    margin: 0;
+    font-size: 21px;
+}
+
+.transactions-page .bank-logo span {
+    font-size: 11px;
+    color: #E7DCC6;
+}
+
+
+/* BACK BUTTON */
+
+.transactions-page .logout-btn {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.35);
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.transactions-page .logout-btn:hover {
+    background: #D4AF37;
+    color: #3E2723;
+    border-color: #D4AF37;
+}
+
+
+/* MAIN */
+
+.transactions-main {
+    width: 90%;
+    max-width: 1150px;
+    margin: auto;
+    padding: 40px 0 60px;
+}
+
+
+/* PAGE HEADER */
+
+.transactions-header {
+    background: linear-gradient(135deg, #3E2723, #5A3B32);
+    color: white;
+    border-radius: 20px;
+    padding: 35px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    position: relative;
+    overflow: hidden;
+}
+
+.transactions-header::after {
+    content: "";
+    position: absolute;
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    background: rgba(212,175,55,0.10);
+    right: -80px;
+    top: -90px;
+}
+
+.transactions-header h2 {
+    font-size: 32px;
+    margin: 7px 0;
+}
+
+.transactions-header p {
+    color: #E7DCC6;
+    max-width: 650px;
+    margin: 0;
+}
+
+.transactions-header .dashboard-label {
+    color: #D4AF37;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.transactions-header-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 18px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(212,175,55,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 34px;
+    color: #D4AF37;
+    position: relative;
+    z-index: 2;
+}
+
+
+/* ACCOUNT SUMMARY */
+
+.transaction-summary-card,
+.transaction-history-card {
+    background: white;
+    border: 1px solid #E7DCC6;
+    border-radius: 18px;
+    padding: 32px;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 30px rgba(62,39,35,0.07);
+}
+
+
+/* SECTION TITLE */
+
+.section-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.section-label {
+    color: #B28C20;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.section-title-row h3 {
+    color: #3E2723;
+    font-size: 23px;
+    margin: 5px 0 0;
+}
+
+.summary-icon,
+.history-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    background: #FDF6E3;
+    border: 1px solid #E7DCC6;
+    color: #B28C20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+}
+
+
+/* ACCOUNT INFO */
+
+.transaction-info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.transaction-info-item {
+    background: #FFFCF5;
+    border: 1px solid #E7DCC6;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.transaction-info-item span {
+    display: block;
+    color: #806C63;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.transaction-info-item strong {
+    color: #3E2723;
+    font-size: 17px;
+}
+
+.balance-item {
+    border-left: 4px solid #D4AF37;
+}
+
+.balance-item strong {
+    color: #9A7814;
+}
+
+
+/* TABLE */
+
+.transaction-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid #E7DCC6;
+    border-radius: 12px;
+}
+
+.transaction-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+}
+
+.transaction-table th {
+    background: #3E2723;
+    color: white;
+    padding: 15px 14px;
+    text-align: left;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.transaction-table td {
+    padding: 15px 14px;
+    border-bottom: 1px solid #EEE5D9;
+    color: #57453F;
+    font-size: 13px;
+}
+
+.transaction-table tbody tr:hover {
+    background: #FFFCF5;
+}
+
+.transaction-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.loading-cell {
+    text-align: center !important;
+    color: #806C63 !important;
+    padding: 30px !important;
+}
+
+
+/* INFORMATION BOX */
+
+.transaction-note {
+    display: flex;
+    gap: 14px;
+    padding: 16px;
+    margin-top: 22px;
+    background: #FDF6E3;
+    border: 1px solid #E7DCC6;
+    border-left: 4px solid #D4AF37;
+    border-radius: 10px;
+}
+
+.note-icon {
+    width: 27px;
+    height: 27px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #D4AF37;
+    color: #3E2723;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+}
+
+.transaction-note strong {
+    color: #3E2723;
+    font-size: 13px;
+}
+
+.transaction-note p {
+    color: #806C63;
+    font-size: 12px;
+    margin: 4px 0 0;
+    line-height: 1.5;
 }
 
 
 /* FOOTER */
 
-.home-footer {
-    width: 100%;
-    padding: 25px 20px;
-    background: #0f2f52;
-    color: white;
-    text-align: center;
+.transactions-footer {
+    border-top: 1px solid #E7DCC6;
+    background: #3E2723;
+    color: #E7DCC6;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
 }
 
-.home-footer h3 {
-    font-size: 21px;
-    margin-bottom: 5px;
+.transactions-footer p {
+    margin: 0;
 }
 
-.home-footer p {
-    color: #cbd5e1;
-    font-size: 13px;
-}
-
-.footer-copy {
-    margin-top: 12px;
+.transactions-footer span {
+    color: #D4AF37;
 }
 
 
 /* MOBILE */
 
-@media (max-width: 800px) {
+@media (max-width: 700px) {
 
-    .home-hero {
-        flex-direction: column;
-        text-align: center;
-        padding: 45px 25px;
+    .transactions-page .bank-navbar {
+        padding: 15px 4%;
     }
 
-    .home-content h1 {
-        font-size: 34px;
+    .transactions-page .bank-logo h1 {
+        font-size: 18px;
     }
 
-    .home-buttons {
-        justify-content: center;
+    .transactions-page .logout-btn {
+        padding: 8px 12px;
+        font-size: 12px;
     }
 
-    .home-card {
-        width: 100%;
-        max-width: 380px;
+    .transactions-main {
+        width: 92%;
+        padding-top: 25px;
     }
 
-    .feature-grid,
-    .steps-grid {
+    .transactions-header {
+        padding: 28px;
+    }
+
+    .transactions-header h2 {
+        font-size: 26px;
+    }
+
+    .transactions-header-icon {
+        display: none;
+    }
+
+    .transaction-summary-card,
+    .transaction-history-card {
+        padding: 22px 18px;
+    }
+
+    .transaction-info-grid {
         grid-template-columns: 1fr;
     }
-}
-/* =========================================
-   HOME PAGE - FINAL LAYOUT FIX
-   ========================================= */
 
-body:has(.home-hero) {
-    display: block !important;
+    .transactions-footer {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+}
+/* =====================================================
+   ADMIN LOGIN PAGE
+   PREMIUM BANKING THEME
+   Dark Brown + Cream + Gold
+===================================================== */
+
+.admin-login-page {
+    min-height: 100vh;
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(212,175,55,0.12),
+            transparent 35%
+        ),
+        #FDF6E3;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* MAIN WRAPPER */
+
+.admin-login-wrapper {
     width: 100%;
     min-height: 100vh;
-    margin: 0;
-    padding: 0;
-    background: #ffffff;
-}
-
-body:has(.home-hero) .home-hero {
-    width: 100%;
-    min-height: auto !important;
-    padding: 55px 8%;
-    margin: 0;
-}
-
-body:has(.home-hero) .home-features {
-    width: 100%;
-    min-height: auto !important;
-    padding: 50px 8%;
-    margin: 0;
-}
-
-body:has(.home-hero) .how-section {
-    width: 100%;
-    min-height: auto !important;
-    padding: 50px 8%;
-    margin: 0;
-}
-
-body:has(.home-hero) .home-footer {
-    width: 100%;
-    min-height: auto !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 30px 20px;
+}
+
+
+/* LOGIN CARD */
+
+.admin-login-card {
+    width: 100%;
+    max-width: 460px;
+
+    background: white;
+
+    border: 1px solid #E7DCC6;
+    border-radius: 22px;
+
+    padding: 42px;
+
+    box-shadow:
+        0 20px 55px rgba(62,39,35,0.12);
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* GOLD TOP LINE */
+
+.admin-login-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 5px;
+
+    background: #D4AF37;
+}
+
+
+/* BRAND */
+
+.admin-brand {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.admin-brand-icon {
+    width: 58px;
+    height: 58px;
+
+    margin: 0 auto 12px;
+
+    border-radius: 15px;
+
+    background: #3E2723;
+    color: #D4AF37;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 27px;
+    font-weight: 800;
+
+    box-shadow:
+        0 8px 20px rgba(62,39,35,0.18);
+}
+
+.admin-brand h1 {
     margin: 0;
+
+    color: #3E2723;
+
+    font-size: 27px;
 }
 
-body:has(.home-hero) .feature-grid {
-    display: grid !important;
+.admin-brand p {
+    margin-top: 5px;
+
+    color: #8B7770;
+
+    font-size: 12px;
 }
 
-body:has(.home-hero) .steps-grid {
-    display: grid !important;
+
+/* HEADING */
+
+.admin-login-heading {
+    text-align: center;
+    margin-bottom: 28px;
 }
-/* =========================================
-   STEP 6 - COMPLETE MOBILE RESPONSIVE
-   ========================================= */
 
-@media (max-width: 600px) {
+.admin-login-heading span {
+    color: #B28C20;
 
-    /* HOME PAGE */
+    font-size: 11px;
+    font-weight: 800;
 
-    .home-hero {
-        padding: 40px 20px;
-        gap: 30px;
+    letter-spacing: 1.7px;
+}
+
+.admin-login-heading h2 {
+    margin: 7px 0;
+
+    color: #3E2723;
+
+    font-size: 25px;
+}
+
+.admin-login-heading p {
+    color: #806C63;
+
+    font-size: 13px;
+    line-height: 1.5;
+
+    max-width: 350px;
+    margin: auto;
+}
+
+
+/* INPUT GROUP */
+
+.admin-input-group {
+    margin-bottom: 20px;
+}
+
+.admin-input-group label {
+    display: block;
+
+    color: #3E2723;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    margin-bottom: 8px;
+}
+
+.admin-input-group input {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 14px 15px;
+
+    border: 1px solid #DCCFC5;
+    border-radius: 9px;
+
+    background: #FFFCF5;
+
+    color: #3E2723;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+.admin-input-group input::placeholder {
+    color: #A49690;
+}
+
+.admin-input-group input:focus {
+    border-color: #D4AF37;
+
+    background: white;
+
+    box-shadow:
+        0 0 0 3px rgba(212,175,55,0.12);
+}
+
+
+/* LOGIN BUTTON */
+
+.admin-login-btn {
+    width: 100%;
+
+    padding: 15px;
+
+    margin-top: 5px;
+
+    border: none;
+    border-radius: 9px;
+
+    background: #D4AF37;
+
+    color: #3E2723;
+
+    font-size: 15px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.admin-login-btn:hover {
+    background: #B8941F;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(212,175,55,0.25);
+}
+
+
+/* LOGIN MESSAGE */
+
+#adminLoginMessage {
+    text-align: center;
+
+    min-height: 20px;
+
+    margin: 16px 0 0;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+/* BACK LINK */
+
+.admin-back-link {
+    text-align: center;
+
+    margin-top: 24px;
+
+    padding-top: 22px;
+
+    border-top: 1px solid #EEE5D9;
+
+    font-size: 13px;
+
+    color: #806C63;
+}
+
+.admin-back-link a {
+    color: #9A7814;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    margin-left: 5px;
+}
+
+.admin-back-link a:hover {
+    color: #3E2723;
+
+    text-decoration: underline;
+}
+
+
+/* SECURITY NOTE */
+
+.admin-security-note {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 25px;
+
+    padding: 13px 15px;
+
+    background: #FDF6E3;
+
+    border: 1px solid #E7DCC6;
+
+    border-radius: 9px;
+}
+
+.security-icon {
+    width: 27px;
+    height: 27px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #D4AF37;
+
+    color: #3E2723;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.admin-security-note strong {
+    display: block;
+
+    color: #3E2723;
+
+    font-size: 12px;
+}
+
+.admin-security-note p {
+    margin: 2px 0 0;
+
+    color: #806C63;
+
+    font-size: 11px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 550px) {
+
+    .admin-login-wrapper {
+        padding: 20px 15px;
     }
 
-    .home-content h1 {
-        font-size: 30px;
+    .admin-login-card {
+        padding: 32px 24px;
+        border-radius: 18px;
     }
 
-    .home-content p {
-        font-size: 14px;
+    .admin-brand h1 {
+        font-size: 24px;
     }
 
-    .home-buttons {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .home-btn {
-        width: 100%;
-        text-align: center;
-    }
-
-    .home-card {
-        width: 100%;
-    }
-
-    .home-features,
-    .how-section {
-        padding: 40px 20px;
-    }
-
-    .feature-grid,
-    .steps-grid {
-        grid-template-columns: 1fr;
-    }
-
-
-    /* NAVIGATION */
-
-    .home-navbar {
-        padding: 15px 20px;
-    }
-
-    .home-nav {
-        width: 100%;
-        gap: 10px;
-    }
-
-    .home-nav a {
-        font-size: 13px;
-    }
-
-
-    /* CUSTOMER DASHBOARD */
-
-    .dashboard-container {
-        padding: 12px;
-    }
-
-    .dashboard-card {
-        padding: 18px;
-    }
-
-    .dashboard-header {
-        padding: 18px;
-    }
-
-    .dashboard-header h1 {
+    .admin-login-heading h2 {
         font-size: 22px;
     }
 
-    .info-grid {
-        grid-template-columns: 1fr;
-        gap: 12px;
+}
+/* =====================================================
+   ADMIN DASHBOARD
+   PREMIUM BANKING THEME
+   Dark Brown + Cream + Gold
+===================================================== */
+
+.admin-dashboard-page {
+    min-height: 100vh;
+    background: #FDF6E3;
+}
+
+
+/* =========================
+   ADMIN NAVBAR
+========================= */
+
+.admin-navbar {
+    background: #3E2723;
+    color: white;
+
+    padding: 17px 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    box-shadow: 0 4px 18px rgba(62,39,35,0.15);
+}
+
+.admin-navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.admin-navbar-icon {
+    width: 46px;
+    height: 46px;
+
+    border-radius: 11px;
+
+    background: #D4AF37;
+    color: #3E2723;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.admin-navbar-brand h1 {
+    margin: 0;
+    font-size: 21px;
+}
+
+.admin-navbar-brand span {
+    color: #E7DCC6;
+    font-size: 11px;
+}
+
+.admin-navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.admin-secure-label {
+    color: #D4AF37;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.admin-logout-btn {
+    background: transparent;
+
+    color: white;
+
+    border: 1px solid rgba(255,255,255,0.35);
+
+    padding: 9px 18px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.admin-logout-btn:hover {
+    background: #D4AF37;
+    color: #3E2723;
+    border-color: #D4AF37;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.admin-dashboard-main {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 40px 0 60px;
+}
+
+
+/* =========================
+   PAGE HEADER
+========================= */
+
+.admin-page-header {
+    background: linear-gradient(
+        135deg,
+        #3E2723,
+        #5A3B32
+    );
+
+    color: white;
+
+    border-radius: 20px;
+
+    padding: 36px 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.admin-page-header::after {
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+    height: 250px;
+
+    border-radius: 50%;
+
+    background: rgba(212,175,55,0.10);
+
+    right: -80px;
+    top: -100px;
+}
+
+.admin-page-label {
+    color: #D4AF37;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.7px;
+}
+
+.admin-page-header h2 {
+    font-size: 31px;
+
+    margin: 8px 0;
+}
+
+.admin-page-header p {
+    color: #E7DCC6;
+
+    max-width: 680px;
+
+    line-height: 1.6;
+
+    margin: 0;
+}
+
+.admin-header-icon {
+    width: 80px;
+    height: 80px;
+
+    border-radius: 18px;
+
+    background: rgba(255,255,255,0.08);
+
+    border: 1px solid rgba(212,175,55,0.4);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 32px;
+
+    color: #D4AF37;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================
+   DASHBOARD CARDS
+========================= */
+
+.admin-dashboard-card {
+    background: white;
+
+    border: 1px solid #E7DCC6;
+
+    border-radius: 18px;
+
+    padding: 30px;
+
+    margin-bottom: 25px;
+
+    box-shadow:
+        0 10px 30px rgba(62,39,35,0.07);
+}
+
+
+/* =========================
+   SECTION HEADING
+========================= */
+
+.admin-section-heading {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+}
+
+.admin-section-heading span {
+    color: #B28C20;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+.admin-section-heading h3 {
+    color: #3E2723;
+
+    font-size: 22px;
+
+    margin: 5px 0 0;
+}
+
+.admin-section-icon {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 10px;
+
+    background: #FDF6E3;
+
+    border: 1px solid #E7DCC6;
+
+    color: #B28C20;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 800;
+}
+
+
+/* =========================
+   STATISTICS
+========================= */
+
+.admin-stat-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+.admin-stat-card {
+    background: #FFFCF5;
+
+    border: 1px solid #E7DCC6;
+
+    border-radius: 13px;
+
+    padding: 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    transition: 0.3s;
+}
+
+.admin-stat-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 20px rgba(62,39,35,0.08);
+}
+
+.admin-stat-icon {
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    border-radius: 11px;
+
+    background: #3E2723;
+
+    color: #D4AF37;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+}
+
+.admin-stat-card span {
+    display: block;
+
+    color: #806C63;
+
+    font-size: 12px;
+
+    margin-bottom: 4px;
+}
+
+.admin-stat-card strong {
+    display: block;
+
+    color: #3E2723;
+
+    font-size: 27px;
+
+    line-height: 1.2;
+}
+
+.admin-stat-card small {
+    display: block;
+
+    color: #A49690;
+
+    font-size: 10px;
+
+    margin-top: 4px;
+}
+
+.pending-stat {
+    border-left: 4px solid #D4AF37;
+}
+
+
+/* =========================
+   DATA CONTAINERS
+========================= */
+
+.admin-data-container {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+.admin-loading {
+    text-align: center;
+
+    padding: 35px;
+
+    color: #806C63;
+
+    background: #FFFCF5;
+
+    border: 1px dashed #DCCFC5;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   TABLES GENERATED BY JS
+========================= */
+
+.admin-data-container table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 700px;
+
+    border: 1px solid #E7DCC6;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+.admin-data-container th {
+    background: #3E2723;
+
+    color: white;
+
+    padding: 14px;
+
+    text-align: left;
+
+    font-size: 12px;
+}
+
+.admin-data-container td {
+    padding: 14px;
+
+    border-bottom: 1px solid #EEE5D9;
+
+    color: #57453F;
+
+    font-size: 13px;
+}
+
+.admin-data-container tr:hover td {
+    background: #FFFCF5;
+}
+
+
+/* =========================
+   BUTTONS GENERATED BY JS
+========================= */
+
+.admin-data-container button {
+    border: none;
+
+    background: #D4AF37;
+
+    color: #3E2723;
+
+    padding: 8px 13px;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+.admin-data-container button:hover {
+    background: #B8941F;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.admin-dashboard-footer {
+    background: #3E2723;
+
+    color: #E7DCC6;
+
+    padding: 20px 5%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    font-size: 12px;
+}
+
+.admin-dashboard-footer p {
+    margin: 0;
+}
+
+.admin-dashboard-footer span {
+    color: #D4AF37;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 750px) {
+
+    .admin-navbar {
+        padding: 15px 4%;
     }
 
-    .admin-table-wrapper {
-        overflow-x: auto;
+    .admin-secure-label {
+        display: none;
     }
 
-    .admin-table {
-        min-width: 650px;
+    .admin-navbar-brand h1 {
+        font-size: 18px;
     }
 
+    .admin-dashboard-main {
+        width: 92%;
+        padding-top: 25px;
+    }
 
-    /* ADMIN DASHBOARD */
+    .admin-page-header {
+        padding: 28px;
+    }
 
-    .admin-dashboard-container {
-        padding: 12px;
+    .admin-page-header h2 {
+        font-size: 26px;
+    }
+
+    .admin-header-icon {
+        display: none;
     }
 
     .admin-dashboard-card {
-        padding: 18px;
+        padding: 22px 18px;
     }
 
-    .admin-dashboard-header {
-        padding: 18px;
-    }
-
-    .admin-summary-grid {
+    .admin-stat-grid {
         grid-template-columns: 1fr;
-        gap: 12px;
     }
 
-    .admin-table-wrapper {
-        width: 100%;
-        overflow-x: auto;
+    .admin-dashboard-footer {
+        flex-direction: column;
+
+        gap: 8px;
+
+        text-align: center;
+    }
+}
+/* =====================================================
+   MONEY TRANSFER PAGE
+   PREMIUM BANKING THEME
+   Dark Brown + Cream + Gold
+===================================================== */
+
+.transfer-page {
+    min-height: 100vh;
+    background: #FDF6E3;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.transfer-page .bank-navbar {
+    background: #3E2723;
+    color: white;
+
+    padding: 17px 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    box-shadow: 0 4px 18px rgba(62,39,35,0.15);
+}
+
+.transfer-page .bank-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.transfer-page .bank-logo-icon {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 10px;
+
+    background: #D4AF37;
+    color: #3E2723;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.transfer-page .bank-logo h1 {
+    margin: 0;
+    font-size: 21px;
+}
+
+.transfer-page .bank-logo span {
+    color: #E7DCC6;
+    font-size: 11px;
+}
+
+.transfer-page .logout-btn {
+    background: transparent;
+
+    color: white;
+
+    border: 1px solid rgba(255,255,255,0.35);
+
+    padding: 10px 18px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.transfer-page .logout-btn:hover {
+    background: #D4AF37;
+    color: #3E2723;
+    border-color: #D4AF37;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.transfer-main {
+    width: 90%;
+    max-width: 1050px;
+
+    margin: auto;
+
+    padding: 40px 0 60px;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.transfer-header {
+    background: linear-gradient(
+        135deg,
+        #3E2723,
+        #5A3B32
+    );
+
+    color: white;
+
+    border-radius: 20px;
+
+    padding: 35px 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.transfer-header::after {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    border-radius: 50%;
+
+    background: rgba(212,175,55,0.10);
+
+    right: -70px;
+    top: -80px;
+}
+
+.transfer-header .dashboard-label {
+    color: #D4AF37;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+.transfer-header h2 {
+    font-size: 32px;
+
+    margin: 7px 0;
+}
+
+.transfer-header p {
+    color: #E7DCC6;
+
+    max-width: 600px;
+
+    margin: 0;
+}
+
+.transfer-header-icon {
+    width: 80px;
+    height: 80px;
+
+    border-radius: 18px;
+
+    background: rgba(255,255,255,0.08);
+
+    border: 1px solid rgba(212,175,55,0.4);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 34px;
+
+    color: #D4AF37;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.transfer-card {
+    background: white;
+
+    border: 1px solid #E7DCC6;
+
+    border-radius: 18px;
+
+    padding: 32px;
+
+    margin-bottom: 25px;
+
+    box-shadow:
+        0 10px 30px rgba(62,39,35,0.07);
+}
+
+
+/* =========================
+   SECTION HEADING
+========================= */
+
+.transfer-section-heading {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+}
+
+.transfer-section-heading .section-label {
+    color: #B28C20;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+.transfer-section-heading h3 {
+    color: #3E2723;
+
+    font-size: 23px;
+
+    margin: 5px 0 0;
+}
+
+.transfer-small-icon {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 10px;
+
+    background: #FDF6E3;
+
+    border: 1px solid #E7DCC6;
+
+    color: #B28C20;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 800;
+}
+
+
+/* =========================
+   ACCOUNT SUMMARY
+========================= */
+
+.transfer-info-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+.transfer-info-item {
+    background: #FFFCF5;
+
+    border: 1px solid #E7DCC6;
+
+    border-radius: 12px;
+
+    padding: 20px;
+}
+
+.transfer-info-item span {
+    display: block;
+
+    color: #806C63;
+
+    font-size: 13px;
+
+    margin-bottom: 8px;
+}
+
+.transfer-info-item strong {
+    color: #3E2723;
+
+    font-size: 17px;
+}
+
+.balance-box {
+    border-left: 4px solid #D4AF37;
+}
+
+.balance-box strong {
+    color: #9A7814;
+}
+
+
+/* =========================
+   INPUTS
+========================= */
+
+.transfer-input-group {
+    margin-bottom: 24px;
+}
+
+.transfer-input-group label {
+    display: block;
+
+    color: #3E2723;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    margin-bottom: 5px;
+}
+
+.transfer-help {
+    color: #8B7770;
+
+    font-size: 12px;
+
+    margin: 0 0 10px;
+}
+
+.transfer-input-group input {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 14px 15px;
+
+    border: 1px solid #DCCFC5;
+
+    border-radius: 9px;
+
+    background: #FFFCF5;
+
+    color: #3E2723;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+.transfer-input-group input::placeholder {
+    color: #A49690;
+}
+
+.transfer-input-group input:focus {
+    border-color: #D4AF37;
+
+    background: white;
+
+    box-shadow:
+        0 0 0 3px rgba(212,175,55,0.12);
+}
+
+
+/* =========================
+   AMOUNT INPUT
+========================= */
+
+.amount-input-wrapper {
+    display: flex;
+
+    align-items: center;
+
+    border: 1px solid #DCCFC5;
+
+    border-radius: 9px;
+
+    background: #FFFCF5;
+
+    overflow: hidden;
+}
+
+.amount-input-wrapper span {
+    padding-left: 15px;
+
+    color: #9A7814;
+
+    font-size: 17px;
+
+    font-weight: 800;
+}
+
+.amount-input-wrapper input {
+    border: none;
+
+    background: transparent;
+
+    box-shadow: none;
+
+    margin: 0;
+}
+
+.amount-input-wrapper:focus-within {
+    border-color: #D4AF37;
+
+    box-shadow:
+        0 0 0 3px rgba(212,175,55,0.12);
+}
+
+
+/* =========================
+   INFORMATION BOX
+========================= */
+
+.transfer-info-box {
+    display: flex;
+
+    gap: 13px;
+
+    padding: 16px;
+
+    margin: 25px 0;
+
+    background: #FDF6E3;
+
+    border: 1px solid #E7DCC6;
+
+    border-left: 4px solid #D4AF37;
+
+    border-radius: 10px;
+}
+
+.transfer-info-icon {
+    width: 27px;
+    height: 27px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #D4AF37;
+
+    color: #3E2723;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 800;
+}
+
+.transfer-info-box strong {
+    color: #3E2723;
+
+    font-size: 13px;
+}
+
+.transfer-info-box p {
+    color: #806C63;
+
+    font-size: 12px;
+
+    margin: 3px 0 0;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   SUBMIT BUTTON
+========================= */
+
+.transfer-submit-btn {
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #D4AF37;
+
+    color: #3E2723;
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.transfer-submit-btn:hover {
+    background: #B8941F;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(212,175,55,0.22);
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.transfer-message {
+    text-align: center;
+
+    min-height: 22px;
+
+    margin: 17px 0 0;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.transfer-footer {
+    background: #3E2723;
+
+    color: #E7DCC6;
+
+    padding: 20px 5%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    font-size: 12px;
+}
+
+.transfer-footer p {
+    margin: 0;
+}
+
+.transfer-footer span {
+    color: #D4AF37;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .transfer-page .bank-navbar {
+        padding: 15px 4%;
     }
 
-    .admin-table {
-        min-width: 850px;
+    .transfer-page .bank-logo h1 {
+        font-size: 18px;
     }
 
+    .transfer-page .logout-btn {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    .transfer-main {
+        width: 92%;
+        padding-top: 25px;
+    }
+
+    .transfer-header {
+        padding: 28px;
+    }
+
+    .transfer-header h2 {
+        font-size: 26px;
+    }
+
+    .transfer-header-icon {
+        display: none;
+    }
+
+    .transfer-card {
+        padding: 23px 18px;
+    }
+
+    .transfer-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .transfer-footer {
+        flex-direction: column;
+
+        gap: 8px;
+
+        text-align: center;
+    }
+}
+/* =========================================
+   BANK ACCOUNT PAGE
+   Premium Brown + Cream + Gold Theme
+   ========================================= */
+
+.bank-account-card {
+    max-width: 650px;
+    margin: 40px auto;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 20px;
+    border-top: 5px solid #D4AF37;
+    box-shadow: 0 12px 35px rgba(62, 39, 35, 0.12);
+}
+
+/* Bank Icon */
+
+.bank-account-card .card-icon {
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+    background: #FDF6E3;
+    border: 1px solid #E7DCC6;
+    border-radius: 15px;
+
+    font-size: 28px;
+}
+
+/* Heading */
+
+.bank-account-card h2 {
+    margin: 0 0 10px;
+
+    color: #3E2723;
+
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* Description */
+
+.bank-account-card .request-description {
+    margin-bottom: 30px;
+
+    color: #777;
+
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+
+/* Form */
+
+#bankAccountForm {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Labels */
+
+#bankAccountForm label {
+    margin-bottom: 8px;
+
+    color: #3E2723;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* Input + Select */
+
+#bankAccountForm input,
+#bankAccountForm select {
+
+    width: 100%;
+
+    padding: 14px 15px;
+
+    margin-bottom: 20px;
+
+    box-sizing: border-box;
+
+    background: #FDF6E3;
+
+    border: 1px solid #E7DCC6;
+    border-radius: 10px;
+
+    color: #3E2723;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+
+/* Input Focus */
+
+#bankAccountForm input:focus,
+#bankAccountForm select:focus {
+
+    background: #ffffff;
+
+    border-color: #D4AF37;
+
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15);
+}
+
+
+/* Placeholder */
+
+#bankAccountForm input::placeholder {
+    color: #999;
+}
+
+
+/* Save Button */
+
+#bankAccountForm button {
+
+    width: 100%;
+
+    margin-top: 8px;
+
+    padding: 15px;
+
+    background: #3E2723;
+    color: #FDF6E3;
+
+    border: none;
+    border-radius: 10px;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+
+/* Button Hover */
+
+#bankAccountForm button:hover {
+
+    background: #D4AF37;
+    color: #3E2723;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 6px 15px rgba(212, 175, 55, 0.25);
+}
+
+
+/* Message */
+
+#accountMessage {
+
+    margin-top: 20px;
+
+    text-align: center;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .bank-account-card {
+
+        margin: 20px auto;
+        padding: 25px 20px;
+
+        border-radius: 16px;
+    }
+
+    .bank-account-card h2 {
+        font-size: 23px;
+    }
+
+    .bank-account-card .card-icon {
+        width: 50px;
+        height: 50px;
+
+        font-size: 24px;
+    }
 }

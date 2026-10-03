@@ -10,53 +10,89 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="customer-dashboard-page">
 
-    <div class="dashboard-container">
+    <!-- TOP NAVBAR -->
+    <header class="bank-navbar">
 
-        <!-- Header -->
-        <header class="dashboard-header">
+        <div class="bank-logo">
+            <div class="bank-logo-icon">🏦</div>
 
             <div>
                 <h1>ChequeBook</h1>
-                <p>Online Cheque Book Request System</p>
+                <span>Digital Banking</span>
+            </div>
+        </div>
+
+        <button id="logoutBtn" class="logout-btn">
+            Logout
+        </button>
+
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="dashboard-main">
+
+        <!-- WELCOME -->
+        <section class="dashboard-welcome">
+
+            <div>
+                <span class="dashboard-label">
+                    CUSTOMER DASHBOARD
+                </span>
+
+                <h2>
+                    Welcome back,
+                    <span id="customerName">Customer</span> 👋
+                </h2>
+
+                <p>
+                    Manage your account, transactions and cheque book requests
+                    from one place.
+                </p>
             </div>
 
-            <button id="logoutBtn">Logout</button>
-
-        </header>
-
-
-        <!-- Welcome -->
-        <section class="welcome-section">
-
-            <h2>Welcome, <span id="customerName">Customer</span> 👋</h2>
-
-            <p>
-                Manage your bank account and track your cheque book requests.
-            </p>
+            <div class="welcome-icon">
+                🏦
+            </div>
 
         </section>
 
 
-        <!-- Customer Information -->
+        <!-- CUSTOMER INFORMATION -->
         <section class="dashboard-card">
 
-            <h2>Customer Information</h2>
+            <div class="card-heading">
+
+                <div>
+                    <span class="card-label">
+                        PROFILE
+                    </span>
+
+                    <h2>Customer Information</h2>
+                </div>
+
+                <div class="card-icon">
+                    👤
+                </div>
+
+            </div>
+
 
             <div class="info-grid">
 
-                <div>
+                <div class="info-item">
                     <span>Name</span>
                     <strong id="customerFullName">-</strong>
                 </div>
 
-                <div>
+                <div class="info-item">
                     <span>Email</span>
                     <strong id="customerEmail">-</strong>
                 </div>
 
-                <div>
+                <div class="info-item">
                     <span>Phone</span>
                     <strong id="customerPhone">-</strong>
                 </div>
@@ -66,81 +102,160 @@
         </section>
 
 
-        <!-- Account Information -->
+        <!-- BANK ACCOUNT -->
         <section class="dashboard-card">
 
-            <h2>Bank Account</h2>
+            <div class="card-heading">
+
+                <div>
+                    <span class="card-label">
+                        ACCOUNT
+                    </span>
+
+                    <h2>Bank Account</h2>
+                </div>
+
+                <div class="card-icon">
+                    💳
+                </div>
+
+            </div>
+
 
             <div id="accountContainer">
 
-                <div class="info-grid">
+                <div class="account-summary">
 
-                    <div>
+                    <div class="account-item">
+
                         <span>Account Number</span>
-                        <strong id="accountNumber">-</strong>
+
+                        <strong id="accountNumber">
+                            -
+                        </strong>
+
                     </div>
 
-                    <div>
+
+                    <div class="account-item">
+
                         <span>Account Type</span>
-                        <strong id="accountType">-</strong>
+
+                        <strong id="accountType">
+                            -
+                        </strong>
+
                     </div>
 
-                    <div>
-                        <span>Balance</span>
-                        <strong id="accountBalance">-</strong>
+
+                    <div class="account-balance">
+
+                        <span>Available Balance</span>
+
+                        <strong id="accountBalance">
+                            -
+                        </strong>
+
                     </div>
 
                 </div>
 
             </div>
-<button
-    class="request-btn"
-    id="transactionsBtn">
-    View Transactions
-</button>
-<button
-    class="request-btn"
-    id="moneyTransferBtn">
-    Money Transfer
-</button>
+
+
+            <!-- ACCOUNT ACTIONS -->
+            <div class="dashboard-actions">
+
+                <button
+                    class="dashboard-action-btn"
+                    id="transactionsBtn">
+
+                    📊
+                    <span>
+                        View Transactions
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="dashboard-action-btn"
+                    id="moneyTransferBtn">
+
+                    💸
+                    <span>
+                        Money Transfer
+                    </span>
+
+                </button>
+
+            </div>
+
         </section>
 
 
-        <!-- Cheque Book Request -->
- <section class="dashboard-card">
-    <h2>Cheque Book Request History</h2>
+        <!-- CHEQUE REQUEST HISTORY -->
+        <section class="dashboard-card">
 
-    <div class="admin-table-wrapper">
+            <div class="card-heading">
 
-        <table class="admin-table">
+                <div>
+                    <span class="card-label">
+                        CHEQUE SERVICES
+                    </span>
 
-            <thead>
-                <tr>
-                    <th>Request ID</th>
-                    <th>Account Number</th>
-                    <th>Leaves</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
+                    <h2>Cheque Book Request History</h2>
+                </div>
 
-            <tbody id="requestHistoryBody">
-                <tr>
-                    <td colspan="4">
-                        Loading requests...
-                    </td>
-                </tr>
-            </tbody>
+                <div class="card-icon">
+                    📄
+                </div>
 
-        </table>
+            </div>
 
-    </div>
 
-    <button class="request-btn" id="requestChequeBtn">
-        Request New Cheque Book
-    </button>
-</section>
+            <div class="table-wrapper">
 
-    </div>
+                <table class="bank-table">
+
+                    <thead>
+
+                        <tr>
+                            <th>Request ID</th>
+                            <th>Account Number</th>
+                            <th>Leaves</th>
+                            <th>Status</th>
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="requestHistoryBody">
+
+                        <tr>
+                            <td colspan="4">
+                                Loading requests...
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <button
+                class="request-cheque-btn"
+                id="requestChequeBtn">
+
+                + Request New Cheque Book
+
+            </button>
+
+        </section>
+
+    </main>
 
 
     <script src="dashboard.js"></script>
