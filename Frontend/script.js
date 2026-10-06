@@ -2,217 +2,107 @@ const API_URL = "https://onlinechequebooksystem.onrender.com/api";
 
 
 // =========================
-// Login and Register box switching
-// =========================
-
-const loginBox = document.getElementById("loginBox");
-const registerBox = document.getElementById("registerBox");
-
-const showRegister = document.getElementById("showRegister");
-const showLogin = document.getElementById("showLogin");
-
-
-showRegister.addEventListener("click", function (event) {
-
-    event.preventDefault();
-
-    loginBox.classList.add("hidden");
-    registerBox.classList.remove("hidden");
-
-});
-
-
-showLogin.addEventListener("click", function (event) {
-
-    event.preventDefault();
-
-    registerBox.classList.add("hidden");
-    loginBox.classList.remove("hidden");
-
-});
-
-
-// =========================
-// Customer Registration
-// =========================
-
-document.getElementById("registerForm").addEventListener(
-    "submit",
-    async function (event) {
-
-        event.preventDefault();
-
-        const name =
-            document.getElementById("registerName").value;
-
-        const email =
-            document.getElementById("registerEmail").value;
-
-        const phone =
-            document.getElementById("registerPhone").value;
-
-        const password =
-            document.getElementById("registerPassword").value;
-
-        const message =
-            document.getElementById("registerMessage");
-
-
-        const customerData = {
-
-            name: name,
-
-            email: email,
-
-            phone: phone,
-
-            password: password
-        };
-
-
-        try {
-
-            const response = await fetch(
-                `${API_URL}/customers/register`,
-                {
-                    method: "POST",
-
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-
-                    body: JSON.stringify(customerData)
-                }
-            );
-
-
-            const result =
-                await response.text();
-
-
-            if (response.ok) {
-
-                message.textContent =
-                    "Registration successful! You can now login.";
-
-                message.style.color = "green";
-
-
-                document
-                    .getElementById("registerForm")
-                    .reset();
-
-            } else {
-
-                message.textContent =
-                    result;
-
-                message.style.color = "red";
-            }
-
-
-        } catch (error) {
-
-            message.textContent =
-                "Unable to connect to the server.";
-
-            message.style.color = "red";
-
-            console.error(error);
-        }
-
-    }
-);
-
-
-// =========================
 // Customer Login
 // =========================
 
-document.getElementById("loginForm").addEventListener(
-    "submit",
-    async function (event) {
-
-        event.preventDefault();
+const customerLoginForm =
+    document.getElementById("customerLoginForm");
 
 
-        const email =
-            document.getElementById("loginEmail").value;
+if (customerLoginForm) {
 
-        const password =
-            document.getElementById("loginPassword").value;
+    customerLoginForm.addEventListener(
+        "submit",
+        async function (event) {
 
-        const message =
-            document.getElementById("loginMessage");
+            event.preventDefault();
 
+            const email =
+                document.getElementById("loginEmail").value.trim();
 
-        const loginData = {
+            const password =
+                document.getElementById("loginPassword").value;
 
-            email: email,
+            const message =
+                document.getElementById("loginMessage");
 
-            password: password
-        };
-
-
-        try {
-
-            const response = await fetch(
-                `${API_URL}/customers/login`,
-                {
-                    method: "POST",
-
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-
-                    body: JSON.stringify(loginData)
-                }
-            );
-
-
-            const result =
-                await response.json();
-
-
-            // =========================
-            // Successful Login
-            // =========================
-
-            if (response.ok) {
-
-                message.textContent =
-                    "Login successful!";
-
-                message.style.color = "green";
-
-
-                // Store customer information
-                localStorage.setItem(
-                    "customerId",
-                    result.id
-                );
-
-                localStorage.setItem(
-                    "customerName",
-                    result.name
-                );
-
-                localStorage.setItem(
-                    "customerEmail",
-                    result.email
+            const loginButton =
+                customerLoginForm.querySelector(
+                    "button[type='submit']"
                 );
 
 
-                // Check whether customer already has
-                // a bank account
+            // Prevent multiple clicks
+            loginButton.disabled = true;
+            loginButton.textContent = "Logging in...";
 
-                setTimeout(async function () {
+            message.textContent = "Connecting to server...";
+            message.style.color = "#3E2723";
+
+
+            const loginData = {
+                email: email,
+                password: password
+            };
+
+
+            try {
+
+                const response = await fetch(
+                    `${API_URL}/customers/login`,
+                    {
+                        method: "POST",
+
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+
+                        body: JSON.stringify(loginData)
+                    }
+                );
+
+
+                const result =
+                    await response.text();
+
+
+                if (response.ok) {
+
+                    const customer =
+                        JSON.parse(result);
+
+
+                    message.textContent =
+                        "Login successful!";
+
+                    message.style.color = "green";
+
+
+                    // Store customer information
+
+                    localStorage.setItem(
+                        "customerId",
+                        customer.id
+                    );
+
+                    localStorage.setItem(
+                        "customerName",
+                        customer.name
+                    );
+
+                    localStorage.setItem(
+                        "customerEmail",
+                        customer.email
+                    );
+
+
+                    // Check bank account
 
                     try {
 
                         const accountResponse =
                             await fetch(
-                                `${API_URL}/accounts/customer/${result.id}`
+                                `${API_URL}/accounts/customer/${customer.id}`
                             );
 
 
@@ -220,16 +110,15 @@ document.getElementById("loginForm").addEventListener(
                             await accountResponse.json();
 
 
-                        // Customer already has account
-                        if (accounts.length > 0) {
+                        if (
+                            Array.isArray(accounts) &&
+                            accounts.length > 0
+                        ) {
 
                             window.location.href =
                                 "customer-dashboard.html";
 
-                        }
-
-                        // Customer does not have account
-                        else {
+                        } else {
 
                             window.location.href =
                                 "bank-account.html";
@@ -244,33 +133,38 @@ document.getElementById("loginForm").addEventListener(
                             "bank-account.html";
                     }
 
-                }, 500);
+
+                } else {
+
+                    message.textContent =
+                        result ||
+                        "Invalid email or password.";
+
+                    message.style.color = "red";
 
 
-            }
+                    // Enable button again
+                    loginButton.disabled = false;
+                    loginButton.textContent = "Login";
+                }
 
-            // =========================
-            // Login Failed
-            // =========================
 
-            else {
+            } catch (error) {
+
+                console.error(error);
 
                 message.textContent =
-                    result;
+                    "Unable to connect to the server.";
 
                 message.style.color = "red";
+
+
+                // Enable button again
+                loginButton.disabled = false;
+                loginButton.textContent = "Login";
             }
 
-
-        } catch (error) {
-
-            message.textContent =
-                "Unable to connect to the server.";
-
-            message.style.color = "red";
-
-            console.error(error);
         }
+    );
 
-    }
-);
+}

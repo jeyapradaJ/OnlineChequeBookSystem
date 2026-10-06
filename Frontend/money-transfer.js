@@ -7,7 +7,10 @@ if (!customerId) {
 }
 
 
-// Load customer account
+// =========================
+// Load Customer Account
+// =========================
+
 async function loadAccount() {
 
     try {
@@ -23,6 +26,7 @@ async function loadAccount() {
         const data = await response.json();
 
         if (!data.accounts || data.accounts.length === 0) {
+
             alert("No bank account found.");
             return;
         }
@@ -60,7 +64,10 @@ async function loadAccount() {
 }
 
 
-// Money transfer
+// =========================
+// Money Transfer
+// =========================
+
 document.getElementById(
     "transferForm"
 ).addEventListener(
@@ -92,34 +99,56 @@ document.getElementById(
             );
 
 
+        // =========================
+        // Validation
+        // =========================
+
         if (!accountId) {
+
             message.textContent =
                 "Account not found.";
+
             return;
         }
 
 
         if (!beneficiaryAccount) {
+
             message.textContent =
                 "Please enter beneficiary account number.";
+
             return;
         }
 
 
-        if (amount <= 0) {
+        if (amount <= 0 || isNaN(amount)) {
+
             message.textContent =
                 "Please enter a valid amount.";
+
             return;
         }
 
+
+        // =========================
+        // Transfer Money
+        // =========================
 
         try {
 
+            message.textContent =
+                "Processing transfer...";
+
+            message.style.color =
+                "#3E2723";
+
+
             const response = await fetch(
                 `${API_URL}/transactions` +
-                `?accountId=${accountId}` +
+                `?accountId=${encodeURIComponent(accountId)}` +
                 `&transactionType=MONEY_TRANSFER` +
-                `&amount=${amount}`,
+                `&amount=${encodeURIComponent(amount)}` +
+                `&beneficiaryAccount=${encodeURIComponent(beneficiaryAccount)}`,
                 {
                     method: "POST"
                 }
@@ -130,17 +159,31 @@ document.getElementById(
                 await response.text();
 
 
+            // =========================
+            // Transfer Failed
+            // =========================
+
             if (!response.ok) {
 
                 message.textContent =
                     result;
 
+                message.style.color =
+                    "red";
+
                 return;
             }
 
 
+            // =========================
+            // Transfer Successful
+            // =========================
+
             message.textContent =
                 "Money transferred successfully!";
+
+            message.style.color =
+                "green";
 
 
             document.getElementById(
@@ -148,8 +191,7 @@ document.getElementById(
             ).reset();
 
 
-            // Reload updated account balance
-
+            // Reload updated sender balance
             await loadAccount();
 
 
@@ -159,13 +201,18 @@ document.getElementById(
 
             message.textContent =
                 "Unable to complete the transfer.";
+
+            message.style.color =
+                "red";
         }
 
     }
 );
 
 
-// Back to dashboard
+// =========================
+// Back to Dashboard
+// =========================
 
 document.getElementById(
     "backBtn"
@@ -180,6 +227,8 @@ document.getElementById(
 );
 
 
-// Load account
+// =========================
+// Load Account
+// =========================
 
 loadAccount();

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account | ChequeBook</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Customer Register Page */
+
+        .register-page {
+            min-height: 100vh;
+            background: #FDF6E3;
+            padding: 30px;
+            box-sizing: border-box;
+        }
+
+        .register-header {
+            max-width: 900px;
+            margin: 0 auto 30px;
+
+            padding: 22px 28px;
+
+            background: #3E2723;
+            color: #FDF6E3;
+
+            border-radius: 16px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            box-shadow: 0 8px 25px rgba(62, 39, 35, 0.18);
+        }
+
+        .register-header h1 {
+            margin: 0;
+            font-size: 30px;
+        }
+
+        .register-header p {
+            margin: 6px 0 0;
+            color: #E7DCC6;
+        }
+
+        #backBtn {
+            padding: 10px 18px;
+
+            background: transparent;
+            color: #FDF6E3;
+
+            border: 1px solid #D4AF37;
+            border-radius: 8px;
+
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        #backBtn:hover {
+            background: #D4AF37;
+            color: #3E2723;
+        }
+
+        .register-card {
+            max-width: 600px;
+            margin: 40px auto;
+
+            background: #ffffff;
+
+            padding: 40px;
+
+            border-radius: 20px;
+
+            border-top: 5px solid #D4AF37;
+
+            box-shadow: 0 12px 35px rgba(62, 39, 35, 0.12);
+
+            box-sizing: border-box;
+        }
+
+        .register-icon {
+            width: 60px;
+            height: 60px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #FDF6E3;
+            border: 1px solid #E7DCC6;
+
+            border-radius: 15px;
+
+            font-size: 28px;
+
+            margin-bottom: 20px;
+        }
+
+        .register-card h2 {
+            margin: 0 0 10px;
+
+            color: #3E2723;
+
+            font-size: 28px;
+        }
+
+        .register-description {
+            margin-bottom: 30px;
+
+            color: #777;
+
+            line-height: 1.6;
+        }
+
+        #customerRegisterForm {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #customerRegisterForm label {
+            margin-bottom: 8px;
+
+            color: #3E2723;
+
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        #customerRegisterForm input {
+            width: 100%;
+
+            box-sizing: border-box;
+
+            padding: 14px 15px;
+
+            margin-bottom: 20px;
+
+            background: #FDF6E3;
+
+            border: 1px solid #E7DCC6;
+
+            border-radius: 10px;
+
+            color: #3E2723;
+
+            font-size: 15px;
+
+            outline: none;
+        }
+
+        #customerRegisterForm input:focus {
+            background: #ffffff;
+
+            border-color: #D4AF37;
+
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15);
+        }
+
+        #customerRegisterForm button {
+            width: 100%;
+
+            padding: 15px;
+
+            margin-top: 5px;
+
+            background: #3E2723;
+
+            color: #FDF6E3;
+
+            border: none;
+
+            border-radius: 10px;
+
+            font-size: 16px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+        }
+
+        #customerRegisterForm button:hover {
+            background: #D4AF37;
+            color: #3E2723;
+        }
+
+        #registerMessage {
+            margin-top: 20px;
+
+            text-align: center;
+
+            font-size: 14px;
+
+            font-weight: 600;
+        }
+
+        @media (max-width: 600px) {
+
+            .register-page {
+                padding: 15px;
+            }
+
+            .register-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            #backBtn {
+                width: 100%;
+            }
+
+            .register-card {
+                padding: 25px 20px;
+            }
+
+            .register-card h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="register-page">
+
+        <!-- Header -->
+        <header class="register-header">
+
+            <div>
+                <h1>ChequeBook</h1>
+                <p>Create Customer Account</p>
+            </div>
+
+            <button id="backBtn" type="button">
+                Back to Login
+            </button>
+
+        </header>
+
+
+        <!-- Registration Card -->
+        <section class="register-card">
+
+            <div class="register-icon">
+                🏦
+            </div>
+
+            <h2>Create Account</h2>
+
+            <p class="register-description">
+                Create your customer account to access online
+                cheque book services.
+            </p>
+
+
+            <form id="customerRegisterForm">
+
+                <label for="registerName">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="registerName"
+                    placeholder="Enter your full name"
+                    required
+                >
+
+
+                <label for="registerEmail">
+                    Email Address
+                </label>
+
+                <input
+                    type="email"
+                    id="registerEmail"
+                    placeholder="Enter your email address"
+                    required
+                >
+
+
+                <label for="registerPhone">
+                    Phone Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="registerPhone"
+                    placeholder="Enter your phone number"
+                    required
+                >
+
+
+                <label for="registerPassword">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="registerPassword"
+                    placeholder="Create a password"
+                    required
+                >
+
+
+                <button type="submit">
+                    Create Account
+                </button>
+
+            </form>
+
+
+            <p id="registerMessage"></p>
+
+        </section>
+
+    </div>
+
+
+    <script src="customer-register.js"></script>
+
+</body>
+
+</html>
