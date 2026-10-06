@@ -18,13 +18,35 @@ public class EmailService {
             String subject,
             String message) {
 
-        SimpleMailMessage mail =
-                new SimpleMailMessage();
+        System.out.println("=================================");
+        System.out.println("EMAIL SENDING STARTED");
+        System.out.println("To: " + to);
+        System.out.println("Subject: " + subject);
 
-        mail.setTo(to);
-        mail.setSubject(subject);
-        mail.setText(message);
+        try {
 
-        mailSender.send(mail);
+            SimpleMailMessage mail =
+                    new SimpleMailMessage();
+
+            mail.setTo(to);
+            mail.setSubject(subject);
+            mail.setText(message);
+
+            mailSender.send(mail);
+
+            System.out.println("EMAIL SENT SUCCESSFULLY");
+            System.out.println("=================================");
+
+        } catch (Exception e) {
+
+            System.out.println("EMAIL SENDING FAILED");
+            System.out.println("Error: " + e.getMessage());
+
+            e.printStackTrace();
+
+            System.out.println("=================================");
+
+            throw e;
+        }
     }
 }
